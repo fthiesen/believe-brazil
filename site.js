@@ -32,21 +32,17 @@
   }
   // Depoimentos
   var slides = Array.prototype.slice.call(document.querySelectorAll('.testimonial'));
-  var segs = Array.prototype.slice.call(document.querySelectorAll('.tp-seg'));
+  var segs = Array.prototype.slice.call(document.querySelectorAll('.av'));
   var active = 0;
   var show = function (n) {
     active = (n + slides.length) % slides.length;
     slides.forEach(function (s, i) { s.classList.toggle('active', i === active); });
     segs.forEach(function (b, i) {
       b.classList.toggle('active', i === active);
-      b.classList.toggle('done', i < active);
     });
   };
   segs.forEach(function (b) {
     b.addEventListener('click', function () { show(Number(b.getAttribute('data-i'))); });
-  });
-  document.addEventListener('animationend', function (e) {
-    if (e.target.classList && e.target.classList.contains('tp-fill')) show(active + 1);
   });
   var slider = document.querySelector('.testimonial-slider');
   if (slider) {

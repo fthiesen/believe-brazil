@@ -184,37 +184,24 @@ form button:hover{background:var(--lilac)}
 .partner-logo img{max-width:190px;max-height:100px;object-fit:contain}
 
 /* Depoimentos */
+.avs{display:flex;justify-content:center;align-items:center;gap:24px;margin:0}
+.av{flex:0 0 auto;width:56px;height:56px;padding:0;border:0;border-radius:50%;background:none;cursor:pointer;transition:width .4s cubic-bezier(.2,.7,.2,1),height .4s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.av img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
+.av:hover{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--blush)}
+.av.active{width:84px;height:84px;box-shadow:0 0 0 4px var(--paper),0 0 0 7px var(--berry)}
+.av:focus-visible{outline:2px solid var(--berry);outline-offset:4px}
 .testimonials{padding:72px 24px;background:var(--paper)}
 .testimonials h2{text-align:center}
 .rule{width:20px;height:1px;margin:-18px auto 52px;background:var(--orange)}
 .testimonial-slider{width:min(92%,900px);margin:auto}
 .testimonial{display:none;padding:52px 70px 0}
-.testimonial.active{display:grid;grid-template-columns:100px 1fr;column-gap:24px;animation:fadeSlide .55s ease}
-.testimonial img{grid-row:1/4;width:100px;height:100px;border-radius:50%;object-fit:cover}
+.testimonial.active{display:block;text-align:center;animation:fadeSlide .55s ease}
 .testimonial h3{margin:0;color:#000;font:500 30px/1.25 RCG,sans-serif}
 .stars{margin:4px 0 0;color:#d9a000;font-size:24px;line-height:1;letter-spacing:3px}
-.testimonial p{grid-column:1/3;margin:18px 0 0;font:italic 20px/1.4 ESP,sans-serif}
-.testimonial .quote{grid-column:1/3;margin-top:18px}
+.testimonial p{margin:18px 0 0;text-align:left;font:italic 20px/1.4 ESP,sans-serif}
+.testimonial .quote{margin-top:18px;text-align:left}
 .testimonial .quote p{margin:0 0 16px}
 .testimonial .quote p:last-child{margin-bottom:0}
-.tp{display:flex;justify-content:center;align-items:center;gap:10px;margin:0}
-.tp-seg{position:relative;flex:0 0 36px;height:24px;padding:0;border:0;background:transparent;cursor:pointer;transition:flex-basis .45s cubic-bezier(.2,.7,.2,1)}
-.tp-seg:before,.tp-fill{content:"";position:absolute;left:0;top:50%;height:5px;margin-top:-2.5px;border-radius:3px}
-.tp-seg:before{right:0;background:rgba(0,0,0,.1);transition:background .25s}
-.tp-seg:hover:before{background:rgba(0,0,0,.2)}
-.tp-seg:focus-visible{outline:2px solid var(--berry);outline-offset:4px;border-radius:4px}
-.tp-fill{width:0;background:var(--c)}
-.tp-seg:nth-child(1){--c:var(--berry)}
-.tp-seg:nth-child(2){--c:var(--orange)}
-.tp-seg:nth-child(3){--c:var(--gold)}
-.tp-seg:nth-child(4){--c:var(--lilac)}
-.tp-seg:nth-child(5){--c:var(--berry)}
-.tp-seg:nth-child(6){--c:var(--orange)}
-.tp-seg.done .tp-fill{width:100%}
-.tp-seg.active{flex-basis:96px}
-.tp-seg.active .tp-fill{animation:tpFill 7s linear forwards}
-.testimonial-slider:hover .tp-seg.active .tp-fill,.bb-armed .testimonial-slider:not(.visible) .tp-seg.active .tp-fill{animation-play-state:paused}
-@keyframes tpFill{from{width:0}to{width:100%}}
 
 /* Contact */
 .contact{min-height:200px;padding:100px max(24px,calc((100vw - var(--max))/2)) 80px;background:transparent;align-items:start;gap:60px}
@@ -259,7 +246,7 @@ footer a{text-decoration:underline}
 .intro-down{animation:introDown .75s ease .2s both}
 .intro-up{animation:introUp .75s ease .4s both}
 @keyframes introDown{from{transform:translate3d(0,-100%,0)}to{transform:translate3d(0,0,0)}}
-@keyframes introUp{from{transform:translate3d(0,100%,0)}to{transform:translate3d(0,0,0)}}
+@keyframes introUp{from{transform:translate3d(0,40px,0);opacity:0}to{transform:none;opacity:1}}
 @keyframes bob{50%{transform:translateY(10px)}}
 @keyframes partnerScroll{to{transform:translateX(-50%)}}
 @keyframes fadeSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -304,9 +291,10 @@ body{background-attachment:scroll;background-position:right top;background-size:
 .contact-action{font-size:21px;gap:8px}
 .contact-action svg{width:20px;height:20px;flex:0 0 20px}
 .testimonial{padding:32px 0 0}
+.avs{gap:12px}
+.av{width:40px;height:40px}
+.av.active{width:60px;height:60px}
 .rule{margin-bottom:32px}
-.testimonial.active{grid-template-columns:80px 1fr}
-.testimonial img{width:80px;height:80px}
 .contact{gap:0;padding:64px 24px}
 .contact-copy{padding:0}
 .contact .follow{padding-top:36px}
@@ -324,7 +312,6 @@ footer .copyright{flex-wrap:wrap;justify-content:center}
 .communities .community-link{font-size:20px}
 }
 @media(prefers-reduced-motion:reduce){
-.tp-seg.active .tp-fill{animation:none;width:100%}
 html{scroll-behavior:auto}
 .bb-armed .reveal{opacity:1;transform:none;transition:none}
 .bb-armed .reveal-mix>article:nth-child(n){opacity:1!important;transform:none!important;transition:none}
@@ -499,46 +486,40 @@ html{scroll-behavior:auto}
 <section class="testimonials" lang="pt-BR">
 <div class="narrow reveal reveal-up" data-reveal="testH"><h2>Depoimentos</h2><div class="rule"></div></div>
 <div class="testimonial-slider reveal reveal-up" data-reveal="testS" aria-live="polite">
-<div class="tp" aria-label="Escolher depoimento">
-<button type="button" class="tp-seg active" aria-label="Depoimento 1 de 6" data-i="0"><i class="tp-fill"></i></button>
-<button type="button" class="tp-seg " aria-label="Depoimento 2 de 6" data-i="1"><i class="tp-fill"></i></button>
-<button type="button" class="tp-seg " aria-label="Depoimento 3 de 6" data-i="2"><i class="tp-fill"></i></button>
-<button type="button" class="tp-seg " aria-label="Depoimento 4 de 6" data-i="3"><i class="tp-fill"></i></button>
-<button type="button" class="tp-seg " aria-label="Depoimento 5 de 6" data-i="4"><i class="tp-fill"></i></button>
-<button type="button" class="tp-seg " aria-label="Depoimento 6 de 6" data-i="5"><i class="tp-fill"></i></button>
+<div class="avs" aria-label="Escolher depoimento">
+<button type="button" class="av active" aria-label="Depoimento de Lilian Melo" data-i="0"><img src="assets/depoimento-lilian.jpg" alt=""></button>
+<button type="button" class="av " aria-label="Depoimento de Daniela Santos" data-i="1"><img src="assets/depoimento-daniela.jpg" alt=""></button>
+<button type="button" class="av " aria-label="Depoimento de Poliana Miranda" data-i="2"><img src="assets/depoimento-poliana.jpg" alt=""></button>
+<button type="button" class="av " aria-label="Depoimento de Rafael Passos" data-i="3"><img src="assets/depoimento-rafael.jpg" alt=""></button>
+<button type="button" class="av " aria-label="Depoimento de Lidia Nobre" data-i="4"><img src="assets/depoimento-lidia.jpg" alt=""></button>
+<button type="button" class="av " aria-label="Depoimento de Elza dos Santos" data-i="5"><img src="assets/depoimento-elza.jpg" alt=""></button>
 </div>
 <article class="testimonial active">
-<img src="assets/depoimento-lilian.jpg" alt="Lilian Melo">
 <h3>Lilian Melo</h3>
 <div class="stars">★★★★★</div>
 <p>“E foi numa reunião do grupo networking para brasileiros que eu conheci a Tati. Nós trocamos mensagens e eu decidi contratar os serviços dela. Em menos de dois meses eu estava empregada na minha área.”</p>
 </article>
 <article class="testimonial ">
-<img src="assets/depoimento-daniela.jpg" alt="Daniela Santos">
 <h3>Daniela Santos</h3>
 <div class="stars">★★★★★</div>
 <p>“Depois da oficina, fiz tudo de acordo com suas orientações e me candidatei para duas vagas. Não só fui chamada para a entrevista como recebi job offer dos dois hospitais.”</p>
 </article>
 <article class="testimonial ">
-<img src="assets/depoimento-poliana.jpg" alt="Poliana Miranda">
 <h3>Poliana Miranda</h3>
 <div class="stars">★★★★★</div>
 <p>“As oficinas foram essenciais para meu entendimento sobre como as coisas funcionam. Você me apresentou pessoas que me apresentaram pessoas, e esse ciclo continua.”</p>
 </article>
 <article class="testimonial ">
-<img src="assets/depoimento-rafael.jpg" alt="Rafael Passos">
 <h3>Rafael Passos</h3>
 <div class="stars">★★★★★</div>
 <div class="quote"><p>“Ser orientado por Tatiane Defacio não foi apenas uma oportunidade, mas uma experiência personalizada que se mostrou inestimável durante uma desafiadora transição de carreira. Sua atenção aos detalhes e atendimento personalizado proporcionaram a confiança que eu precisava em meio ao estresse do mercado de trabalho. Desde refinar meu currículo até garantir a posição que desejava, os resultados foram notáveis. O profissionalismo, a dedicação e a orientação perspicaz de Tatiane foram verdadeiramente transformadores. Eu a recomendo de todo o coração para quem busca um suporte profissional excepcional!”</p></div>
 </article>
 <article class="testimonial ">
-<img src="assets/depoimento-lidia.jpg" alt="Lidia Nobre">
 <h3>Lidia Nobre</h3>
 <div class="stars">★★★★★</div>
 <div class="quote"><p>“Ser mentorada da Tati foi uma experiência que mudou meu modo de ver a mim mesma porque ela tem esse dom de olhar pra gente, pras nossas vivências e experiências de um modo muito especial e eu nunca vou conseguir agradecer o suficiente por isso.</p><p>Com a ajuda dela eu consegui transformar o meu modo de me apresentar ao mercado de trabalho e acredito que isso ainda vai reverberar muito ao longo da minha vida.</p><p>Acredito que qualquer pessoa que for mentorada por ela pelo período que seja vai atingir seus objetivos até aqueles que ainda não sabe que tem, além daqueles que ela te mostra que não são apenas um sonho. Tudo isso com muito pé no chão, claro.”</p></div>
 </article>
 <article class="testimonial ">
-<img src="assets/depoimento-elza.jpg" alt="Elza dos Santos">
 <h3>Elza dos Santos</h3>
 <div class="stars">★★★★★</div>
 <div class="quote"><p>“Acompanho o trabalho da Tati há aproximadamente cinco anos e, nesse período, pude perceber o quanto ela leva a sério o desenvolvimento profissional. Sua dedicação em cada projeto é admirável; além disso, Tati é uma amiga incrível, que transmite sempre uma energia positiva capaz de transformar qualquer jornada.</p><p>Neste ano tive a oportunidade de participar do Career Bootcamp, conduzido por ela, e foi uma experiência transformadora. Durante meses de tarefas, encontros e conversas profundas, Tati orquestrou cada etapa com clareza e objetividade. Cada tema foi abordado com riqueza de detalhes, mostrando que falar de carreira vai muito além de currículos e cartas de apresentação, trata-se de sonhos, objetivos, felicidade, descobertas e talentos.</p><p>O Career Bootcamp é um programa que amplia horizontes e ajuda cada participante a reconhecer e desenvolver suas próprias habilidades. Tati conduz o processo com transparência e sensibilidade, extraindo o melhor de cada um e mostrando o valor único que cada profissional carrega. Participar dessa jornada foi muito mais do que um aprendizado: foi um divisor de águas. Recomendo de olhos fechados a Tati e o Career Bootcamp a todos que desejam descobrir seu verdadeiro potencial e alcançar resultados que antes pareciam inatingíveis.”</p></div>
