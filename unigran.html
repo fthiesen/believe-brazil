@@ -116,6 +116,20 @@ footer a{text-decoration:underline}
 .bb-armed .reveal-left{transform:translateX(-42px)}
 .bb-armed .reveal-right{transform:translateX(42px)}
 .bb-armed .reveal.visible{opacity:1;transform:none}
+.bb-armed .reveal-mix{opacity:1;transform:none}
+.bb-armed .reveal-mix>*{opacity:0;transition:opacity .6s ease,transform .95s cubic-bezier(.2,.8,.25,1.12)}
+.bb-armed .facts.reveal-mix>:nth-child(1){transform:translateX(-160px)}
+.bb-armed .facts.reveal-mix>:nth-child(2){transform:translateX(160px)}
+.bb-armed .facts.reveal-mix>:nth-child(3){transform:translate(-60px,140px)}
+.bb-armed .facts.reveal-mix>:nth-child(4){transform:translate(60px,140px)}
+.bb-armed .course-list.reveal-mix>:nth-child(1){transform:translateX(-160px)}
+.bb-armed .course-list.reveal-mix>:nth-child(2){transform:translateY(140px)}
+.bb-armed .course-list.reveal-mix>:nth-child(3){transform:translateY(140px)}
+.bb-armed .course-list.reveal-mix>:nth-child(4){transform:translateX(160px)}
+.bb-armed .facts.reveal-mix.visible>:nth-child(n),.bb-armed .course-list.reveal-mix.visible>:nth-child(n){opacity:1;transform:none}
+.bb-armed .reveal-mix.visible>:nth-child(2){transition-delay:.15s}
+.bb-armed .reveal-mix.visible>:nth-child(3){transition-delay:.3s}
+.bb-armed .reveal-mix.visible>:nth-child(4){transition-delay:.45s}
 .intro-down{animation:introDown .75s ease .2s both}
 .intro-up{animation:introUp .75s ease .4s both}
 @keyframes introDown{from{transform:translate3d(0,-100%,0)}to{transform:translate3d(0,0,0)}}
@@ -179,6 +193,7 @@ footer .copyright{flex-wrap:wrap;justify-content:center}
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 .bb-armed .reveal{opacity:1;transform:none;transition:none}
+.bb-armed .reveal-mix>*{opacity:1!important;transform:none!important;transition:none}
 .intro-down,.intro-up,.hero-copy>*,.hero-copy .badge,.hero-frame:before,.hero-frame img,.hero-visual:after{animation:none}
 }
 </style>
@@ -229,7 +244,7 @@ html{scroll-behavior:auto}
 <p>Por meio do EAD, a UNIGRAN amplia ainda mais a democratização da educação superior.</p>
 <p>São 70 cursos de graduação presenciais, semipresenciais e a distância, além de mais de 40 cursos de pós-graduação e cursos livres.</p>
 </div>
-<div class="facts reveal reveal-right" data-reveal="abR">
+<div class="facts reveal reveal-mix" data-reveal="abR">
 <div class="fact"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="16" r="6"></circle><path d="M6 38v-2a12 12 0 0 1 24 0v2"></path><circle cx="34" cy="18" r="5"></circle><path d="M33 28a10 10 0 0 1 11 10"></path></svg><div><small>Mais de</small><b>61 mil</b><span>alunos formados</span></div></div>
 <div class="fact"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 44s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"></path><circle cx="24" cy="20" r="5"></circle></svg><div><small>Mais de</small><b>200</b><span>polos da UNIGRAN no mundo</span></div></div>
 <div class="fact"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5l5.8 11.8 13 1.9-9.4 9.2 2.2 13L24 34.8 12.4 40.9l2.2-13-9.4-9.2 13-1.9z"></path></svg><div><small>A melhor do</small><b>Estado</b><span>com conceito 5 no MEC</span></div></div>
@@ -242,7 +257,7 @@ html{scroll-behavior:auto}
 <span class="eyebrow">Cursos</span>
 <h2 id="courses-title">Cursos para todos os momentos da sua vida</h2>
 </div>
-<ul class="course-list reveal reveal-up" data-reveal="cL">
+<ul class="course-list reveal reveal-mix" data-reveal="cL">
 <li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="10" width="32" height="22" rx="2"></rect><path d="M4 38h40M18 38l2-6h8l2 6"></path></svg><h3>Graduação EAD</h3><p>Flexibilidade para estudar de onde estiver, com a qualidade UNIGRAN.</p></li>
 <li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="15" r="6"></circle><circle cx="33" cy="15" r="6"></circle><path d="M4 40v-3a12 12 0 0 1 24 0v3M24 30a12 12 0 0 1 20 7v3"></path></svg><h3>Graduação Presencial</h3><p>Cursos presenciais em Campo Grande e Dourados, no Mato Grosso do Sul.</p></li>
 <li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 12c-5-4-12-4-18-2v28c6-2 13-2 18 2 5-4 12-4 18-2V10c-6-2-13-2-18 2z"></path><path d="M24 12v28"></path></svg><h3>Pós-graduação</h3><p>Mais de 40 cursos para você se especializar e alcançar o próximo nível.</p></li>
