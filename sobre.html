@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Believe Brazil — Sobre</title>
+<meta name="description" content="Conheça a trajetória de Tati Defácio e a missão da Believe Brazil HUB.">
+<link rel="icon" href="assets/favicon.ico">
+<style>
+@font-face{font-family:RCG;src:url("assets/rcg-500.woff2") format("woff2");font-weight:500}
+@font-face{font-family:ESP;src:url("assets/esp-400.woff2") format("woff2");font-weight:400}
+:root{--berry:#ba315e;--orange:#eb7a27;--gold:#ee9924;--lilac:#927aae;--blush:#d7b1b2;--paper:#f4f4ef;--max:1140px}
+*{box-sizing:border-box}
+.bb-root{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;color:#000;font:400 18px/1.45 Arial,sans-serif;background-color:#fff;background-image:url("assets/arrow-bg.svg");background-repeat:no-repeat;background-position:right top;background-size:50% auto;background-attachment:fixed}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Header (igual à home) */
+.site-header{position:relative;z-index:5;width:100%;height:140px;margin:auto;padding:0 max(24px,calc((100vw - var(--max))/2));display:flex;align-items:center;justify-content:space-between}
+.brand img{width:160px}
+.site-header nav{display:flex;gap:10px}
+.site-header nav a{position:relative;padding:13px 15px 8px;font:500 15px/1 RCG,sans-serif;text-transform:uppercase;letter-spacing:.8px;transition:color .25s}
+.site-header nav a:after{content:"";position:absolute;inset:1px;border:2px solid var(--orange);opacity:0;transition:.3s}
+.site-header nav a:hover:after,.site-header nav a:focus-visible:after,.site-header nav a.current:after{opacity:1}
+.site-header nav a:hover,.site-header nav a:focus-visible{color:var(--berry)}
+.menu-toggle{display:none;border:0;background:transparent;padding:8px;cursor:pointer}
+.menu-toggle span:not(.sr-only){display:block;width:26px;height:2px;margin:5px;background:var(--berry)}
+.colour-ribbon{height:30px;display:grid;grid-template-columns:17.771% 10.366% 32.892% 24.707% 14.264%}
+.colour-ribbon i:nth-child(1){background:var(--blush)}
+.colour-ribbon i:nth-child(2){background:var(--gold)}
+.colour-ribbon i:nth-child(3){background:var(--orange)}
+.colour-ribbon i:nth-child(4){background:var(--berry)}
+.colour-ribbon i:nth-child(5){background:var(--lilac)}
+
+/* Compartilhado */
+.wrap{padding-left:max(24px,calc((100vw - var(--max))/2));padding-right:max(24px,calc((100vw - var(--max))/2))}
+.eyebrow{display:block;margin-bottom:36px;color:var(--berry);font-size:18px;text-transform:uppercase;letter-spacing:1.5px}
+.eyebrow:after{content:"";display:block;width:20px;height:1px;margin-top:14px;background:var(--orange)}
+h2{margin:0 0 30px;font:500 36px/1.1 RCG,sans-serif}
+.text-link{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:0 0 7px;color:var(--berry);border-bottom:2px solid currentColor;font:400 24px/1.2 ESP,sans-serif;transition:.25s}
+.text-link:hover{color:var(--orange)}
+
+/* Topo da página */
+.page-hero{padding-top:40px;padding-bottom:80px}
+.page-hero h1{max-width:760px;margin:0 0 24px;font:500 52px/1.1 RCG,sans-serif}
+.page-hero p{max-width:680px;margin:0;color:var(--berry);font:400 30px/1.3 ESP,sans-serif}
+
+/* Trajetória */
+.story{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:72px;align-items:center;padding-top:100px;padding-bottom:100px;background:linear-gradient(90deg,var(--paper) 70%,var(--gold) 70%)}
+.story-copy p{margin:0 0 20px;max-width:620px}
+.story-copy .story-strong{font-weight:700}
+.signature{margin-top:32px}
+.signature b{display:block;color:var(--berry);font:400 34px/1.1 ESP,sans-serif}
+.signature span{display:block;margin-top:6px;font-size:15px;letter-spacing:1px;text-transform:uppercase}
+.story-photo{justify-self:end;width:100%;max-width:450px}
+.story-photo img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:0}
+
+/* Missão */
+.mission{padding-top:100px;padding-bottom:100px;color:#fff;text-align:center;background:var(--berry)}
+.mission .eyebrow{margin-bottom:28px;color:#fff}
+.mission .eyebrow:after{margin-left:auto;margin-right:auto;background:var(--gold)}
+.mission-statement{max-width:860px;margin:0 auto 56px;font:500 36px/1.15 RCG,sans-serif}
+.mission-intro{margin:0 0 32px;font-size:18px}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:780px;margin:0 auto;padding:0;list-style:none}
+.pillars li{display:flex;flex-direction:column;align-items:center;gap:14px;padding:28px 12px 24px;border-radius:6px;background:rgba(255,255,255,.1);font:500 19px/1.2 RCG,sans-serif}
+.pillars svg{width:40px;height:40px;stroke:var(--gold)}
+@keyframes pillarPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}60%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
+.pillars li:hover{animation:pillarPulse 2.4s ease-out infinite}
+@media (prefers-reduced-motion:reduce){.pillars li:hover{animation:none}}
+
+/* Linha do tempo */
+.journey{padding-top:110px;padding-bottom:110px;background:var(--paper)}
+.journey-head{text-align:center;margin-bottom:64px}
+.journey-head .eyebrow{margin-bottom:24px}
+.journey-head .eyebrow:after{margin-left:auto;margin-right:auto}
+.journey-head h2{margin:0}
+.timeline-wrap{position:relative;max-width:1000px;margin:0 auto}
+.timeline-wrap:before{content:"";position:absolute;top:8px;bottom:8px;left:50%;width:2px;margin-left:-1px;background:var(--blush)}
+.tl-progress{position:absolute;top:8px;left:50%;width:4px;margin-left:-2px;max-height:calc(100% - 16px);border-radius:2px;background:var(--orange);transition:height .2s linear}
+.timeline{position:relative;margin:0;padding:0;list-style:none}
+.timeline li{position:relative;width:50%;padding:0 52px 52px 0;text-align:right}
+.timeline li:nth-child(even){margin-left:50%;padding:0 0 52px 52px;text-align:left}
+.timeline li:before{content:"";position:absolute;top:6px;right:-9px;width:18px;height:18px;border-radius:50%;background:var(--blush);box-shadow:0 0 0 4px var(--paper);transition:background .3s,transform .3s}
+.timeline li.on:before{background:var(--orange);transform:scale(1.15);animation:dotPulse 2.4s ease-out infinite}
+.timeline li:nth-child(even):before{right:auto;left:-9px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li:last-child:before{width:24px;height:24px;top:3px;right:-12px}
+.timeline li:last-child.on:before{background:var(--berry);animation-name:dotPulseBerry}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 0 4px var(--paper),0 0 0 4px rgba(235,122,39,.5)}60%{box-shadow:0 0 0 4px var(--paper),0 0 0 14px rgba(235,122,39,0)}}
+@keyframes dotPulseBerry{0%,100%{box-shadow:0 0 0 4px var(--paper),0 0 0 4px rgba(186,49,94,.5)}60%{box-shadow:0 0 0 4px var(--paper),0 0 0 14px rgba(186,49,94,0)}}
+@media (prefers-reduced-motion:reduce){.timeline li.on:before{animation:none!important}}
+.timeline li:last-child:nth-child(even):before{left:-12px;right:auto}
+.tl-year{display:block;margin-bottom:4px;color:var(--berry);font:400 26px/1.2 ESP,sans-serif}
+.timeline h3{margin:0 0 10px;font:500 24px/1.25 RCG,sans-serif;text-wrap:balance}
+.timeline p{margin:0;line-height:1.38;text-wrap:balance}
+.timeline p+p{margin-top:12px}
+
+/* Chamada final */
+.cta{padding-top:96px;padding-bottom:96px;text-align:center;background:transparent}
+.cta .eyebrow{margin-bottom:24px}
+.cta .eyebrow:after{margin-left:auto;margin-right:auto}
+.cta h2{margin-bottom:8px}
+.cta-text{margin:0}
+
+/* Rodapé */
+footer{display:flex;justify-content:space-between;padding:20px 30px;color:#000;background:transparent;font-size:14px}
+footer .copyright{display:flex;gap:5px}
+footer a{text-decoration:underline}
+
+/* Animações */
+.bb-armed .reveal{opacity:0;transform:translateY(34px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.bb-armed .reveal-left{transform:translateX(-42px)}
+.bb-armed .reveal-right{transform:translateX(42px)}
+.bb-armed .reveal.visible{opacity:1;transform:none}
+.bb-armed .reveal-cards{opacity:1;transform:none}
+.bb-armed .reveal-cards li{opacity:0;transform:translateX(-180px) rotate(-16deg);transition:opacity .5s ease,transform .9s cubic-bezier(.2,.85,.25,1.15)}
+.bb-armed .reveal-cards li:nth-child(even){transform:translateX(180px) rotate(16deg)}
+.bb-armed .reveal-cards.visible li{opacity:1;transform:none}
+.bb-armed .reveal-cards.visible li:nth-child(2){transition-delay:.12s}
+.bb-armed .reveal-cards.visible li:nth-child(3){transition-delay:.24s}
+.bb-armed .reveal-cards.visible li:nth-child(4){transition-delay:.36s}
+.bb-armed .reveal-cards.visible li:nth-child(5){transition-delay:.48s}
+.bb-armed .reveal-cards.visible li:nth-child(6){transition-delay:.6s}
+.intro-down{animation:introDown .75s ease .2s both}
+.intro-up{animation:introUp .75s ease .4s both}
+@keyframes introDown{from{transform:translate3d(0,-100%,0)}to{transform:translate3d(0,0,0)}}
+@keyframes introUp{from{transform:translate3d(0,40px,0);opacity:0}to{transform:none;opacity:1}}
+
+/* Tablet / mobile */
+@media(max-width:850px){
+body{background-attachment:scroll;background-size:100% auto}
+.site-header{min-height:92px;height:auto}
+.menu-toggle{display:block;z-index:3}
+.site-header nav{position:absolute;z-index:2;top:82px;right:20px;left:20px;display:none;flex-direction:column;padding:20px;background:#fff;box-shadow:0 12px 35px rgba(0,0,0,.12)}
+.site-header nav.open{display:flex}
+.page-hero{padding-top:32px;padding-bottom:44px}
+.page-hero h1{font-size:38px}
+.page-hero p{font-size:24px}
+.story{grid-template-columns:1fr;gap:0;padding:0;background:var(--paper)}
+.story-copy{padding:64px 24px}
+.story-photo{justify-self:stretch;max-width:none;padding:0 24px 24px;background:var(--gold)}
+.story-photo img{max-width:450px;margin:0 auto -48px;transform:translateY(-48px)}
+h2{font-size:30px}
+.mission{padding-top:72px;padding-bottom:72px}
+.mission-statement{font-size:27px;margin-bottom:40px}
+.journey{padding-top:72px;padding-bottom:72px}
+.journey-head{margin-bottom:44px}
+.timeline-wrap:before{left:9px}
+.tl-progress{left:9px}
+.timeline li,.timeline li:nth-child(even){width:auto;margin-left:0;padding:0 0 40px 44px;text-align:left}
+.timeline li:before,.timeline li:nth-child(even):before{left:0;right:auto}
+.timeline li:last-child:before,.timeline li:last-child:nth-child(even):before{left:-3px}
+.timeline h3{font-size:22px}
+.tl-year{font-size:22px}
+.cta{padding-top:64px;padding-bottom:64px}
+.text-link{font-size:21px;gap:8px}
+footer{flex-direction:column;align-items:center;gap:2px;text-align:center;line-height:1.3}
+footer .copyright{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:560px){
+.pillars{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pillars li{padding:22px 10px 18px;font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.bb-armed .reveal{opacity:1;transform:none;transition:none}
+.bb-armed .reveal-cards li{opacity:1;transform:none;transition:none}
+.intro-down,.intro-up{animation:none}
+}
+</style>
+<script src="site.js" defer></script>
+</head>
+<body>
+<div class="bb-root">
+
+<header class="site-header intro-down">
+<a href="index.html" class="brand" aria-label="Believe Brazil — página inicial"><img src="assets/believe-brazil-logo.svg" alt="Believe Brazil"></a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
+<nav id="primary-nav" aria-label="Navegação principal">
+<a href="index.html">Início</a>
+<a href="#top" class="current" aria-current="page">Sobre</a>
+<a href="unigran.html">Educação</a>
+<a href="index.html#contact">Contato</a>
+</nav>
+</header>
+
+<main id="top">
+
+<section class="page-hero wrap intro-up">
+<span class="eyebrow">Trajetória e missão</span>
+<h1 style="max-width: 577px">Conexões que geram oportunidades e transformam vidas!</h1>
+
+</section>
+
+<div class="colour-ribbon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<section class="story wrap" aria-labelledby="story-title">
+<div class="story-copy reveal reveal-left" data-reveal="storyL">
+<span class="eyebrow">Trajetória</span>
+<h2 id="story-title">Da estratégia de carreira a um ecossistema de oportunidades</h2>
+<p>Ao longo dos últimos anos, minha atuação evoluiu da estratégia de carreira e do recrutamento para a construção de um ecossistema capaz de conectar brasileiros a diferentes oportunidades no Canadá.</p>
+<p>Como recrutadora e estrategista de carreira, já apoiei centenas de profissionais em seus processos de posicionamento, networking, busca de emprego e desenvolvimento de carreira, além de conectar talentos a oportunidades na América do Norte e na Europa.</p>
+<p class="story-strong">Hoje, essa experiência dá um novo passo com a Believe Brazil HUB.</p>
+<div class="signature"><b>Tati Defácio</b><span>Fundadora &amp; CEO da Believe Brazil</span></div>
+</div>
+<div class="story-photo reveal reveal-right" data-reveal="storyR">
+<img src="assets/tati-defacio-palestra.jpg" alt="Tati Defácio apresentando a palestra The Hidden Job Market">
+</div>
+</section>
+
+<section class="mission wrap" aria-labelledby="mission-title">
+<div class="reveal reveal-up" data-reveal="mis">
+<span class="eyebrow" id="mission-title">Minha missão</span>
+<p class="mission-statement">Conectar brasileiros no Canadá a oportunidades reais para crescer na carreira e nos negócios.</p>
+<p class="mission-intro">A Believe Brazil HUB reúne em um único ecossistema:</p>
+<ul class="pillars reveal reveal-cards" data-reveal="pil">
+<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="16" r="6"></circle><path d="M6 38v-2a12 12 0 0 1 24 0v2"></path><circle cx="34" cy="18" r="5"></circle><path d="M33 28a10 10 0 0 1 11 10"></path></svg>Comunidades</li>
+<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="16" width="36" height="24" rx="3"></rect><path d="M18 16v-4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4M6 27h36M22 27v4h4v-4"></path></svg>Carreira</li>
+<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="28" height="34" rx="3"></rect><path d="M18 8V6h12v2M16 20h16M16 27h16M16 34h10"></path></svg>Vagas</li>
+<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 24 9l20 9-20 9z"></path><path d="M12 22v10c0 3 6 6 12 6s12-3 12-6V22M44 18v10"></path></svg>Educação</li>
+<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22 24 8l18 14"></path><path d="M10 19v21h28V19M20 40V28h8v12"></path></svg>Moradia</li>
+<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="36" height="32" rx="3"></rect><path d="M6 19h36M16 6v8M32 6v8M15 27h4M22 27h4M29 27h4M15 34h4M22 34h4"></path></svg>Eventos</li>
+</ul>
+</div>
+</section>
+
+<section class="journey wrap" aria-labelledby="journey-title">
+<div class="journey-head reveal reveal-up" data-reveal="tlH">
+<span class="eyebrow">Minha jornada no Canadá</span>
+<h2 id="journey-title">De 2017 até a Believe Brazil HUB</h2>
+</div>
+<div class="timeline-wrap reveal reveal-up" data-reveal="tl">
+<span class="tl-progress" style="height: 0%" aria-hidden="true"></span>
+<ol class="timeline">
+<li><span class="tl-year">2017</span><h3>Chegada ao Canadá</h3><p>Cheguei ao Canadá como turista, com o desejo de construir uma nova trajetória internacional.</p></li>
+<li><span class="tl-year">Dez 2017</span><h3>Primeira oportunidade</h3><p>Conquistei minha primeira oportunidade na área de Recrutamento, ajudando muitos brasileiros a encontrarem o primeiro trabalho em Toronto.</p></li>
+<li><span class="tl-year">Nov 2018</span><h3>Nasce a Believe Brazil</h3><p>Criei a Believe Brazil com o propósito de apoiar brasileiros no Canadá por meio de consultoria de carreira e networking.</p></li>
+<li><span class="tl-year">2019</span><h3>Sponsorship e HR Pro</h3><p>Conquistei sponsorship profissional, que me permitiu continuar no país. No mesmo período, nasceu a comunidade HR Pro, para profissionais brasileiros de Recursos Humanos no Canadá.</p></li>
+<li><span class="tl-year">2020</span><h3>Lançamento do Career Bootcamp</h3><p>Lancei o Career Bootcamp, um programa de mentoria de carreira em grupo para ajudar profissionais a entender o mercado canadense, se posicionar com mais estratégia e conquistar a sua oportunidade de trabalho.</p></li>
+<li><span class="tl-year">2021</span><h3>Expansão de impacto</h3><p>Aumentamos o alcance da comunidade, criamos novos programas e fortalecemos parcerias para gerar ainda mais oportunidades para brasileiros no Canadá, com workshops de carreira e eventos de networking.</p></li>
+<li><span class="tl-year">2022</span><h3>Conexões globais</h3><p>Ampliamos nossa atuação global, apoiando profissionais a conquistarem posições na América do Norte e na Europa.</p></li>
+<li><span class="tl-year">2023</span><h3>Mais programas e parcerias</h3><p>Novos serviços, eventos e parcerias estratégicas para impulsionar carreiras, negócios e conexões da comunidade. Com o grupo CEO’s Brasileiras no Canadá, ampliamos nossa atuação com empresárias brasileiras que buscam desenvolver seus negócios.</p></li>
+<li><span class="tl-year">2024</span><h3>Comunidade forte e engajada</h3><p>Nos tornamos referência para brasileiros no Canadá, com milhares de conexões, mentorias, eventos e histórias de sucesso.</p></li>
+<li><span class="tl-year">2025</span><h3>Preparando o futuro</h3><p>Ampliamos nossa atuação no recrutamento internacional, apoiando profissionais a conquistarem posições remotas por meio da Inteligência Artificial.</p></li>
+<li><span class="tl-year">2026</span><h3>Nasce a Believe Brazil HUB</h3><p>Depois de anos conectando profissionais, empresas e a comunidade brasileira, a Believe Brazil começou um novo capítulo: foi convidada para ser representante da UNIGRAN Américas, trazendo a universidade brasileira para o Canadá.</p><p>Também fechamos parcerias para auxiliar na compra, venda e locação de imóveis na Grande Região de Toronto.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="cta wrap">
+<div class="reveal reveal-up" data-reveal="cta">
+<span class="eyebrow">Fale com a gente</span>
+<h2>Vamos conversar?</h2>
+<a class="text-link" href="index.html#contact">Entre em contato <span>→</span></a>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="copyright"><span id="year"></span><span>© Believe Brazil - Todos os direitos reservados</span></div>
+<span><a href="https://sitetoaster.unity42.ca/" target="_blank" rel="noopener">SiteToaster</a></span>
+</footer>
+<div class="colour-ribbon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+</div>
+</body>
+</html>

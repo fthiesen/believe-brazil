@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Believe Brazil — Início</title>
+<meta name="description" content="Believe Brazil HUB conecta brasileiros no Canadá a comunidades, vagas, educação e oportunidades de carreira.">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@500&amp;display=swap">
+<style>
+@font-face{font-family:RCG;src:url("assets/rcg-500.woff2") format("woff2");font-weight:500}
+@font-face{font-family:Dosis;src:url("assets/dosis-semibold.woff2") format("woff2");font-weight:600}
+@font-face{font-family:ESP;src:url("assets/esp-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:ESP;src:url("assets/esp-400-italic.woff2") format("woff2");font-style:italic;font-weight:400}
+:root{--berry:#ba315e;--orange:#eb7a27;--gold:#ee9924;--lilac:#927aae;--blush:#d7b1b2;--paper:#f4f4ef;--max:1140px}
+*{box-sizing:border-box}
+.bb-root{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;color:#000;font:400 18px/1.45 Arial,sans-serif;background-color:#fff;background-image:url("assets/arrow-bg.svg");background-repeat:no-repeat;background-position:right top;background-size:50% auto;background-attachment:fixed}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Header */
+.site-header{position:relative;z-index:5;width:100%;height:140px;margin:auto;padding:0 max(24px,calc((100vw - var(--max))/2));display:flex;align-items:center;justify-content:space-between;background:transparent}
+.brand img{width:160px}
+.site-header nav{display:flex;gap:10px}
+/* Fonte anterior do menu (para reverter): font:600 15px/1 Dosis,sans-serif; */
+.site-header nav a{position:relative;padding:13px 15px 8px;font:500 15px/1 RCG,sans-serif;text-transform:uppercase;letter-spacing:.8px;transition:color .25s}
+.site-header nav a:after{content:"";position:absolute;inset:1px;border:2px solid var(--orange);opacity:0;transition:.3s}
+.site-header nav a:hover:after,.site-header nav a:focus-visible:after,.site-header nav a:first-child:after{opacity:1}
+.site-header nav a:hover,.site-header nav a:focus-visible{color:var(--berry)}
+.menu-toggle{display:none;border:0;background:transparent;padding:8px;cursor:pointer}
+.menu-toggle span:not(.sr-only){display:block;width:26px;height:2px;margin:5px;background:var(--berry)}
+
+/* Hero */
+.hero{min-height:640px;padding:0 15px 80px;display:grid;place-items:center;background:transparent}
+.hero-inner{width:min(600px,100%)}
+.hero h1{margin:0 0 30px;font:500 35px/1.2 RCG,sans-serif}
+.hero p{margin:0 0 30px;color:var(--berry);font:400 28px/1.3 ESP,sans-serif}
+.scroll-cue{display:block;width:26px;height:26px;animation:bob 1.8s ease-in-out infinite}
+.scroll-cue svg{width:26px;height:26px;fill:var(--berry)}
+.colour-ribbon{height:30px;margin-top:-30px;display:grid;grid-template-columns:17.771% 10.366% 32.892% 24.707% 14.264%}
+.colour-ribbon i:nth-child(1){background:var(--blush)}
+.colour-ribbon i:nth-child(2){background:var(--gold)}
+.colour-ribbon i:nth-child(3){background:var(--orange)}
+.colour-ribbon i:nth-child(4){background:var(--berry)}
+.colour-ribbon i:nth-child(5){background:var(--lilac)}
+
+/* Shared */
+.split-section{display:grid;grid-template-columns:1fr 1fr}
+.section-copy{max-width:650px;padding:25px 7vw}
+.eyebrow{display:block;margin-bottom:36px;color:var(--berry);font-size:18px;text-transform:uppercase;letter-spacing:1.5px}
+.eyebrow:after{content:"";display:block;width:20px;height:1px;margin-top:14px;background:var(--orange)}
+.section-copy h2,.contact h2,.testimonials h2,.newsletter h2{margin:0 0 30px;font:500 36px/1.1 RCG,sans-serif}
+.section-copy p,.contact-copy p{line-height:1.45}
+.text-link,.contact-action{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:0 0 7px;color:var(--berry);border-bottom:2px solid currentColor;font:400 26px/1.2 ESP,sans-serif;transition:.25s}
+.text-link,.contact-action{font-size:24px}
+.text-link:hover,.contact-action:hover{color:var(--orange)}
+.narrow{width:min(800px,100%);margin:auto}
+
+/* About */
+.about{grid-template-columns:45.088% 54.912%;padding:80px;align-items:center;background:linear-gradient(90deg,var(--berry) 30%,var(--paper) 30%)}
+.about-visual{position:relative;width:100%;max-width:450px;justify-self:end}
+.about-visual img{width:450px;height:600px;object-fit:cover}
+.about-visual p{position:absolute;left:-286px;top:250px;width:520px;margin:0;color:#fff;font-size:20px;transform:rotate(90deg)}
+
+/* Comunidades */
+.communities{position:relative;background:#fff}
+.communities{--wide:1320px}
+.communities>.section-copy{width:min(100%,var(--wide));max-width:none;margin:0 auto;padding:80px 40px 48px}
+.communities>.section-copy{text-align:center}
+.communities .section-copy h2{margin-bottom:0}
+.communities .eyebrow{margin-bottom:24px}
+.communities .eyebrow:after{margin-left:auto;margin-right:auto}
+.communities .communities-intro{max-width:820px;margin:24px auto 0;font-size:20px;line-height:1.7}
+.communities .service-icon{align-self:center}
+.communities .service-list h3{align-self:stretch;text-align:center}
+.service-list{position:relative;color:#fff}
+.communities .service-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;width:min(100%,var(--wide));margin:0 auto;padding:0 40px 96px;background:#fff;color:#fff}
+.communities .service-list article{display:flex;flex-direction:column;gap:28px;min-width:0;overflow-wrap:break-word;hyphens:auto;margin:0;padding:44px 40px 40px;background:var(--berry)}
+.service-icon,.service-icon svg{width:56px;height:56px}
+.communities .service-icon{color:#fff}
+.communities .service-icon svg{fill:none}
+.communities .service-list article>div{display:flex;flex-direction:column;flex:1;align-items:flex-start;min-width:0}
+.communities .service-list h3{margin:0 0 20px;font:500 26px/1.25 RCG,sans-serif;color:#fff}
+.communities .service-list p{margin:0 0 16px;font-size:16px;line-height:1.45}
+.about .about-closing{font-weight:700}
+.about .section-copy{max-width:720px;padding:25px 4vw 25px 56px}
+@media(max-width:850px){.about .section-copy{max-width:none;padding:70px 24px}}
+.communities .community-link{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding:10px 0 7px;color:var(--gold);border-bottom:2px solid currentColor;font:400 21px/1.2 ESP,sans-serif;transition:.25s}
+.communities .community-link:hover{color:var(--blush)}
+.communities .service-list article,.job-list article{border-radius:6px}
+.communities .community-link:focus-visible{outline:2px solid #fff;outline-offset:6px}
+
+/* Vagas */
+.jobs{--wide:1320px;--violet:#4f3480;background:var(--violet)}
+.jobs>.section-copy{width:min(100%,var(--wide));max-width:none;margin:0 auto;padding:88px 40px 48px;text-align:center}
+.jobs .eyebrow{margin-bottom:24px;color:#fff}
+.jobs .eyebrow:after{margin-left:auto;margin-right:auto;background:var(--orange)}
+.jobs .section-copy h2{margin:0;color:#fff}
+.job-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;width:min(100%,var(--wide));margin:0 auto;padding:0 40px 96px}
+.job-list article{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:44px 40px 40px;background:#efe9f6;color:#1d1428;overflow-wrap:break-word}
+.job-list h3{margin:0 0 26px;color:var(--violet);font:500 26px/1.25 RCG,sans-serif}
+.job-logo{display:block;height:34px;width:auto;fill:currentColor}
+.job-mercor{display:flex;align-items:center;gap:12px;font:500 32px/34px RCG,sans-serif}
+.job-mercor .job-logo{height:32px}
+.job-ethos{display:block;font:500 36px/34px "Zalando Sans Expanded",sans-serif;letter-spacing:-.025em}
+.job-list p{margin:0 0 16px;font-size:16px;line-height:1.45}
+.job-link{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding:10px 0 7px;color:var(--lilac);border-bottom:2px solid currentColor;font:400 21px/1.2 ESP,sans-serif;transition:.25s}
+.job-link:hover{color:var(--orange)}
+.job-link:focus-visible{outline:2px solid var(--violet);outline-offset:6px}
+@media(max-width:1000px){
+.jobs>.section-copy{width:min(100%,728px);padding:64px 24px 36px}
+.job-list{grid-template-columns:1fr;gap:20px;padding:0 24px 64px}
+.job-list article{width:min(100%,680px);margin:0 auto;padding:36px 32px 32px}
+.job-list h3{font-size:28px;margin-bottom:16px}
+.job-link{margin-top:6px;font-size:21px}
+}
+@media(max-width:480px){
+.jobs>.section-copy{padding:56px 16px 28px}
+.job-list{gap:16px;padding:0 16px 56px}
+.job-list article{padding:30px 22px 26px}
+.job-list h3{font-size:25px;margin-bottom:18px}
+.job-logo{height:28px}
+.job-mercor{font-size:27px;line-height:28px}
+.job-mercor .job-logo{height:27px}
+.job-ethos{font-size:30px;line-height:28px}
+.job-list p{margin-bottom:14px;font-size:17.5px}
+.job-link{font-size:20px}
+}
+
+/* UNIGRAN */
+.unigran{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center;padding:100px max(24px,calc((100vw - var(--max))/2));background:linear-gradient(90deg,var(--paper) 68%,var(--gold) 68%)}
+.unigran-logo{display:block;height:46px;width:133px;margin:0 0 36px;fill:var(--orange)}
+.unigran .eyebrow{margin-bottom:24px}
+.unigran h2{margin:0 0 24px;font:500 40px/1.15 RCG,sans-serif}
+.unigran h2 em{font-style:normal;color:var(--berry)}
+.unigran-copy p{max-width:560px;margin:0}
+.unigran-visual{position:relative;display:flex;justify-content:center}
+.unigran-frame{position:relative;display:flex;justify-content:center;align-items:flex-end;width:380px;height:440px;border-radius:0 0 190px 190px;overflow:hidden}
+.unigran-frame:before{content:"";position:absolute;left:0;bottom:0;width:380px;height:380px;border-radius:50%;background:var(--berry)}
+.unigran-frame img{position:relative;height:420px;width:auto}
+.unigran-visual:after{content:"";position:absolute;top:56px;left:calc(50% + 150px);width:44px;height:44px;border-radius:50%;background:var(--lilac)}
+.unigran-badge{position:absolute;bottom:36px;left:calc(50% - 230px);padding:10px 18px;border-radius:999px;background:var(--lilac);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.12);font:600 15px/1 Dosis,sans-serif;letter-spacing:.8px;text-transform:uppercase}
+@media(max-width:850px){
+.unigran{grid-template-columns:1fr;gap:0;padding:0;background:var(--paper)}
+.unigran-copy{padding:64px 24px}
+.unigran-visual{padding-top:0;background:var(--gold)}
+.unigran h2{font-size:32px}
+.unigran-logo{height:38px;width:110px;margin-bottom:28px}
+.unigran-frame{z-index:1;width:300px;height:350px;margin:10px 0 -48px;border-radius:0 0 150px 150px}
+.unigran-frame:before{width:300px;height:300px}
+.unigran-frame img{height:332px}
+.unigran-visual:after{left:calc(50% + 112px);top:-17px;width:34px;height:34px}
+.unigran-badge{z-index:2;left:calc(50% - 170px);bottom:-24px;font-size:13px}
+}
+@media(max-width:400px){.unigran-badge{left:8px}}
+
+/* Events */
+.events{padding:80px max(24px,calc((100vw - var(--max))/2));align-items:center;background:linear-gradient(90deg,var(--paper) 50%,#fff 50%)}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-right:70px}
+.photo-grid img{width:100%;aspect-ratio:1;object-fit:cover;transition:.8s}
+.photo-grid img:hover{filter:brightness(.7)}
+.events .section-copy{padding:40px 0 40px 70px}
+
+/* Newsletter */
+.newsletter{padding:90px 24px 80px;color:#fff;text-align:center;background:var(--orange)}
+.newsletter p{margin:0;font:400 26px/1.5 ESP,sans-serif}
+.inline-form{display:grid;grid-template-columns:1fr 1fr auto;gap:20px;margin-top:35px}
+.inline-form input{width:100%;padding:14px;color:#000;border:1px solid rgba(0,0,0,.2);border-radius:0;background:#fff}
+form button{padding:13px 28px;color:#fff;border:0;background:var(--berry);cursor:pointer;transition:.25s}
+form button:hover{background:var(--lilac)}
+
+/* Partners */
+.partners{width:100%;padding:100px 0 80px;background:#fff;overflow:hidden}
+.partners-inner{width:100%;margin:auto;padding:0 max(24px,calc((100vw - var(--max))/2))}
+.partner-carousel{width:100%;overflow:hidden}
+.partner-track{display:flex;width:max-content;animation:partnerScroll 30s linear infinite}
+.partner-carousel:hover .partner-track,.partner-carousel:focus-within .partner-track{animation-play-state:paused}
+.partner-set{display:flex;align-items:center;gap:56px;padding-right:56px}
+.partner-logo{display:grid;place-items:center;flex:0 0 190px;width:190px;height:120px}
+.partner-logo img{max-width:190px;max-height:100px;object-fit:contain}
+
+/* Depoimentos */
+.testimonials{padding:72px 24px;background:var(--paper)}
+.testimonials h2{text-align:center}
+.rule{width:20px;height:1px;margin:-18px auto 52px;background:var(--orange)}
+.testimonial-slider{width:min(92%,900px);margin:auto}
+.testimonial{display:none;padding:52px 70px 0}
+.testimonial.active{display:grid;grid-template-columns:100px 1fr;column-gap:24px;animation:fadeSlide .55s ease}
+.testimonial img{grid-row:1/4;width:100px;height:100px;border-radius:50%;object-fit:cover}
+.testimonial h3{margin:0;color:#000;font:500 30px/1.25 RCG,sans-serif}
+.stars{margin:4px 0 0;color:#d9a000;font-size:24px;line-height:1;letter-spacing:3px}
+.testimonial p{grid-column:1/3;margin:18px 0 0;font:italic 20px/1.4 ESP,sans-serif}
+.testimonial .quote{grid-column:1/3;margin-top:18px}
+.testimonial .quote p{margin:0 0 16px}
+.testimonial .quote p:last-child{margin-bottom:0}
+.tp{display:flex;justify-content:center;align-items:center;gap:10px;margin:0}
+.tp-seg{position:relative;flex:0 0 36px;height:24px;padding:0;border:0;background:transparent;cursor:pointer;transition:flex-basis .45s cubic-bezier(.2,.7,.2,1)}
+.tp-seg:before,.tp-fill{content:"";position:absolute;left:0;top:50%;height:5px;margin-top:-2.5px;border-radius:3px}
+.tp-seg:before{right:0;background:rgba(0,0,0,.1);transition:background .25s}
+.tp-seg:hover:before{background:rgba(0,0,0,.2)}
+.tp-seg:focus-visible{outline:2px solid var(--berry);outline-offset:4px;border-radius:4px}
+.tp-fill{width:0;background:var(--c)}
+.tp-seg:nth-child(1){--c:var(--berry)}
+.tp-seg:nth-child(2){--c:var(--orange)}
+.tp-seg:nth-child(3){--c:var(--gold)}
+.tp-seg:nth-child(4){--c:var(--lilac)}
+.tp-seg:nth-child(5){--c:var(--berry)}
+.tp-seg:nth-child(6){--c:var(--orange)}
+.tp-seg.done .tp-fill{width:100%}
+.tp-seg.active{flex-basis:96px}
+.tp-seg.active .tp-fill{animation:tpFill 7s linear forwards}
+.testimonial-slider:hover .tp-seg.active .tp-fill,.bb-armed .testimonial-slider:not(.visible) .tp-seg.active .tp-fill{animation-play-state:paused}
+@keyframes tpFill{from{width:0}to{width:100%}}
+
+/* Contact */
+.contact{min-height:200px;padding:100px max(24px,calc((100vw - var(--max))/2)) 80px;background:transparent;align-items:start;gap:60px}
+.contact-copy{min-width:0;padding-right:0}
+.contact .contact-copy h2{margin-bottom:24px}
+.contact-copy>p{margin:0 0 20px}
+.contact-copy>a.contact-action{display:flex;width:max-content;max-width:100%;margin:0 0 20px;overflow-wrap:anywhere}
+.contact-action svg{order:2;width:20px;height:20px;fill:currentColor}
+.contact-action span{order:1;min-width:0}
+.contact .follow{padding:0}
+.contact .follow h2{margin:0 0 30px;font:500 36px/1.1 RCG,sans-serif}
+.socials{display:flex;gap:10px}
+.follow .socials a{display:grid;place-items:center;width:48px;height:48px;margin:0;padding:14px;color:#fff;border-radius:50%;background:var(--orange);transition:.25s}
+.follow .socials a:hover{background:var(--berry)}
+.socials svg{width:20px;height:20px;fill:currentColor}
+
+/* Footer */
+footer{display:flex;justify-content:space-between;padding:0 30px 20px;color:#000;background:#fff;font-size:14px}
+footer .copyright{display:flex;gap:5px}
+footer a{text-decoration:underline}
+.footer-ribbon{margin-top:0}
+
+/* Animations */
+.bb-armed .reveal{opacity:0;transform:translateY(34px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.bb-armed .reveal-left{transform:translateX(-42px)}
+.bb-armed .reveal-right{transform:translateX(42px)}
+.bb-armed .reveal.visible{opacity:1;transform:none}
+.intro-down{animation:introDown .75s ease .2s both}
+.intro-up{animation:introUp .75s ease .4s both}
+@keyframes introDown{from{transform:translate3d(0,-100%,0)}to{transform:translate3d(0,0,0)}}
+@keyframes introUp{from{transform:translate3d(0,100%,0)}to{transform:translate3d(0,0,0)}}
+@keyframes bob{50%{transform:translateY(10px)}}
+@keyframes partnerScroll{to{transform:translateX(-50%)}}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* Tablet / mobile */
+@media(max-width:1180px){
+.communities .service-list{gap:24px;padding:0 32px 88px}
+.communities>.section-copy{padding:80px 32px 44px}
+.communities .service-list article{padding:36px 28px 32px}
+.communities .service-list h3{font-size:27px}
+.communities .community-link{font-size:21px}
+}
+@media(max-width:1000px){
+.communities .service-list{grid-template-columns:1fr;gap:20px;padding:0 24px 64px}
+.communities .service-list article{width:min(100%,680px);margin:0 auto;gap:22px;padding:36px 32px 32px}
+.communities .service-list h3{font-size:28px;margin-bottom:16px}
+.communities .community-link{margin-top:6px;font-size:21px}
+.communities>.section-copy{width:min(100%,728px);padding:64px 24px 36px}
+.communities .communities-intro{max-width:none}
+}
+@media(max-width:850px){
+body{background-attachment:scroll;background-position:right top;background-size:100% auto}
+.site-header{min-height:92px;height:auto}
+.menu-toggle{display:block;z-index:3}
+.site-header nav{position:absolute;z-index:2;top:82px;right:20px;left:20px;display:none;flex-direction:column;padding:20px;background:#fff;box-shadow:0 12px 35px rgba(0,0,0,.12)}
+.site-header nav.open{display:flex}
+.hero{min-height:600px;padding:45px 24px 90px}
+.split-section,.about{grid-template-columns:1fr}
+.about,.events,.contact{padding:0;background:none}
+.about{background:#fff}
+.communities,.communities .service-list{background:var(--paper)}
+.about-visual{display:grid;grid-template-columns:auto minmax(0,450px);justify-content:center;gap:18px;max-width:none;padding:55px 24px 55px 20px;background:linear-gradient(90deg,var(--berry) max(28%,calc(50% - 185px)),var(--paper) 0)}
+.about-visual img{grid-column:2;width:100%;height:auto;aspect-ratio:3/4;margin:0;object-fit:cover}
+.about-visual p{position:static;grid-column:1;grid-row:1;align-self:start;width:auto;color:#fff;font-size:18px;line-height:1.45;writing-mode:vertical-rl;transform:none}
+.section-copy,.events .section-copy,.contact-copy{max-width:none;padding:70px 24px}
+.photo-grid{padding:60px 24px;background:var(--paper)}
+.inline-form{grid-template-columns:1fr}
+.partner-set{gap:32px;padding-right:32px}
+.partner-logo{flex-basis:150px;width:150px;height:100px}
+.partner-logo img{max-width:150px;max-height:80px}
+.text-link{font-size:21px;gap:8px}
+.contact-action{font-size:21px;gap:8px}
+.contact-action svg{width:20px;height:20px;flex:0 0 20px}
+.testimonial{padding:32px 0 0}
+.rule{margin-bottom:32px}
+.testimonial.active{grid-template-columns:80px 1fr}
+.testimonial img{width:80px;height:80px}
+.contact{gap:0;padding:64px 24px}
+.contact-copy{padding:0}
+.contact .follow{padding-top:36px}
+footer{flex-direction:column;align-items:center;gap:2px;text-align:center;line-height:1.3}
+footer .copyright{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:480px){
+.communities>.section-copy{padding:56px 16px 28px}
+.communities .communities-intro{font-size:19px}
+.communities .service-list{gap:16px;padding:0 16px 56px}
+.communities .service-list article{gap:18px;padding:30px 22px 26px}
+.service-icon,.service-icon svg{width:48px;height:48px}
+.communities .service-list h3{font-size:25px;margin-bottom:14px}
+.communities .service-list p{margin-bottom:14px;font-size:17.5px}
+.communities .community-link{font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){
+.tp-seg.active .tp-fill{animation:none;width:100%}
+html{scroll-behavior:auto}
+.bb-armed .reveal{opacity:1;transform:none;transition:none}
+.intro-down,.intro-up,.scroll-cue,.partner-track{animation:none}
+.partner-carousel{overflow-x:auto}
+.partner-set[aria-hidden="true"]{display:none}
+}
+</style>
+<script src="site.js" defer></script>
+</head>
+<body>
+<div class="bb-root">
+
+<header class="site-header intro-down">
+<a href="#top" class="brand" aria-label="Believe Brazil — página inicial"><img src="assets/believe-brazil-logo.svg" alt="Believe Brazil"></a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
+<nav id="primary-nav" aria-label="Navegação principal">
+<a href="#top">Início</a>
+<a href="sobre.html">Sobre</a>
+<a href="unigran.html">Educação</a>
+<a href="#contact">Contato</a>
+</nav>
+</header>
+
+<main id="top">
+
+<section class="hero">
+<div class="hero-inner intro-up">
+<h1>Uma ponte entre candidatos estrangeiros e empresas que buscam profissionais comprometidos e dedicados.</h1>
+<p>Saiba como podemos ajudar você.</p>
+<a class="scroll-cue" href="#about" aria-label="Ir para Sobre"><svg viewBox="0 0 20 20" aria-hidden="true"><polygon points="9,0 9,16.2 3.4,10.6 2,12 10,20 18,12 16.6,10.6 11,16.2 11,0"></polygon></svg></a>
+</div>
+</section>
+
+<div class="colour-ribbon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<section class="about split-section" id="about">
+<div class="about-visual reveal reveal-left" data-reveal="aboutL">
+<img src="assets/tati-defacio.jpg" alt="Tati Defácio, fundadora e CEO da Believe Brazil, sentada em uma poltrona de couro">
+<p><strong>Tatiane Defácio</strong> — Fundadora da Believe Brazil</p>
+</div>
+<div class="section-copy reveal reveal-right" data-reveal="aboutR" lang="pt-BR">
+<span class="eyebrow">Sobre</span>
+<h2>Olá! Eu sou Tati Defácio</h2>
+<p>Estrategista de Carreira Internacional, Recrutadora Global de Talentos e Fundadora &amp; CEO da Believe Brazil.</p>
+<p>Morando em Toronto desde 2017, construí minha trajetória profissional combinando mais de 20 anos de experiência no ambiente corporativo, atuação em empresas multinacionais e formação em Administração, com pós-graduação pela FGV-SP.</p>
+<p>Com passagem pelos Estados Unidos em 2007 e 2008, minha experiência como imigrante no Canadá me mostrou que construir uma nova vida em outro país vai muito além de encontrar um emprego. <br><br>É preciso ter informação, direcionamento, conexões e acesso às oportunidades certas.</p>
+<p class="about-closing">Foi dessa visão que nasceu a Believe Brazil.</p>
+<a class="text-link" href="sobre.html">Saiba mais <span>→</span></a>
+</div>
+</section>
+
+<section class="communities" id="communities" lang="pt-BR" aria-labelledby="communities-title">
+<div class="section-copy reveal reveal-left" data-reveal="comL">
+<span class="eyebrow">Conexões</span>
+<h2 id="communities-title">Comunidades</h2>
+<p class="communities-intro" style="width: 100%; max-width: 880px">Encontre pessoas que compartilham seus interesses e objetivos. As comunidades da Believe Brazil conectam brasileiros para trocar experiências, ampliar redes de contato e explorar oportunidades de desenvolvimento profissional e empreendedor, no Canadá e além.</p>
+</div>
+<div class="service-list reveal reveal-right" data-reveal="comR">
+<article>
+<span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"></circle><circle cx="20" cy="16" r="4.5"></circle><path d="M12 28.5a8.5 8.5 0 0 1 16 0"></path><path d="M30.5 30.5 42 42" stroke-width="3.5"></path><path d="M38 6.5v5M35.5 9h5"></path></svg></span>
+<div>
+<h3>HR Pro</h3>
+<p>Comunidade para profissionais brasileiros que atuam ou desejam construir uma carreira em Recursos Humanos no Canadá. Um espaço para networking, troca de experiências, conteúdos, eventos e oportunidades na área.</p>
+<p>A participação está sujeita ao preenchimento do formulário de onboarding e à aprovação do perfil de acordo com os critérios da comunidade.</p>
+<p>Preencha o onboarding e solicite sua participação.</p>
+<a class="community-link" href="https://form.respondi.app/1YQnyZt9" target="_blank" rel="noopener">Solicitar acesso <span aria-hidden="true">→</span></a>
+</div>
+</article>
+<article>
+<span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 6 14l11 9 7-13 7 13 11-9-2 20z"></path><circle cx="6" cy="12" r="2"></circle><circle cx="24" cy="8" r="2"></circle><circle cx="42" cy="12" r="2"></circle><path d="M9 40h30"></path><path d="M24 31.5s-4-2.6-4-5.2a2.2 2.2 0 0 1 4-1.2 2.2 2.2 0 0 1 4 1.2c0 2.6-4 5.2-4 5.2z"></path></svg></span>
+<div>
+<h3>CEO’s Brasileiras</h3>
+<p>Uma comunidade exclusiva para mulheres brasileiras que empreendem ou desejam desenvolver seus negócios no Canadá. Um espaço de conexão, fortalecimento e crescimento, com networking, mentorias, eventos, divulgação de produtos e serviços e desenvolvimento da mentalidade empreendedora.</p>
+<p>A participação acontece por convite ou mediante preenchimento do formulário de onboarding e análise do perfil.</p>
+<p>Preencha o onboarding e solicite sua participação.</p>
+<a class="community-link" href="https://form.respondi.app/cUc4hqEj" target="_blank" rel="noopener">Solicitar acesso <span aria-hidden="true">→</span></a>
+</div>
+</article>
+<article>
+<span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="10" width="32" height="22" rx="2"></rect><path d="M7 32h34l3 6H4z"></path><path d="M21 35h6"></path><circle cx="22" cy="21" r="7"></circle><ellipse cx="22" cy="21" rx="3" ry="7"></ellipse><path d="M15 21h14"></path><path d="M35 13v5M32.5 15.5h5"></path></svg></span>
+<div>
+<h3>Remote Jobs</h3>
+<p>Uma comunidade para profissionais que têm fluência em inglês e buscam oportunidades remotas e globais. Compartilhamos vagas para diversas áreas de atuação, com foco em Inteligência Artificial.</p>
+<p>Trabalhe remotamente, participe de projetos globais e conecte suas habilidades às oportunidades da nova economia.</p>
+<p>Entre na nossa comunidade.</p>
+<a class="community-link" href="https://chat.whatsapp.com/F2Bdc6EPNN98sLPivxEhPQ" target="_blank" rel="noopener">Participar <span aria-hidden="true">→</span></a>
+</div>
+</article>
+</div>
+</section>
+
+<section class="jobs" id="vagas" aria-labelledby="jobs-title">
+<div class="section-copy reveal reveal-left" data-reveal="jobL">
+<span class="eyebrow">Oportunidades remotas</span>
+<h2 id="jobs-title">Vagas</h2>
+</div>
+<div class="job-list reveal reveal-right" data-reveal="jobR">
+<article>
+<h3><span class="job-mercor"><svg class="job-logo" viewBox="0 0 22 20" aria-hidden="true"><path d="M17.2634 9.27658L17.1638 17.6531C17.1638 17.6531 17.0692 18.4051 17.78 18.6852C18.4908 18.9653 21.1066 19.9982 21.1066 19.9982C21.1066 19.9982 21.4247 20.0406 21.7135 19.71C22.0014 19.3805 21.9632 19.0699 21.9632 18.6843V5.90181C21.9632 5.90181 22.3304 1.05204 18.5488 0.0775902C18.5488 0.0775902 16.4844 -0.444497 14.8883 1.2199C15.5227 1.55894 16.1327 2.15203 16.5609 3.16138C17.4491 5.25492 17.2634 9.27658 17.2634 9.27658H17.2634ZM14.8611 1.24852C14.8463 1.26425 14.8316 1.28004 14.8169 1.29618C14.8316 1.28011 14.8464 1.26425 14.8611 1.24852Z"></path><path d="M0.0133275 18.4885C0.0133275 18.4885 -0.173773 19.9432 0.864961 19.9633L4.15547 18.5355C4.15547 18.5355 4.82604 18.3099 4.78901 17.601C4.75204 16.892 4.56209 9.17724 4.56209 9.17724C4.56209 9.17724 3.1472 2.2537 0.907708 1.69287C0.492643 2.30338 0.271631 2.96674 0.153198 3.46378C0.0339216 3.96447 0.0129377 4.23972 0.00864999 4.7369C-0.0132434 7.28862 0.0133275 18.4885 0.0133275 18.4885Z"></path><path d="M4.56216 9.17735C4.56216 9.17735 6.88539 14.7443 7.99104 15.5866C7.99104 15.5866 10.4549 13.2241 10.9964 10.6378L8.37999 3.95256C8.37999 3.95256 6.86577 -0.305532 3.61535 0.0720441C2.27472 0.227759 1.43478 0.917777 0.907715 1.69298C3.14721 2.25381 4.56209 9.17735 4.56209 9.17735H4.56216Z"></path><path d="M7.99121 15.5866C9.09679 16.429 10.4824 17.1948 12.3841 16.5056C14.2857 15.8164 14.9638 14.2848 15.185 13.8101C15.4061 13.3353 17.2635 9.27664 17.2635 9.27664C17.2635 9.27664 17.4492 5.25506 16.561 3.16145C16.1328 2.1521 15.5227 1.55901 14.8884 1.21997C14.7916 1.32088 14.6965 1.42948 14.6037 1.54706C14.6037 1.54706 14.1953 2.05058 13.8846 2.91967C13.5738 3.78876 10.9966 10.6378 10.9966 10.6378C10.4552 13.2241 7.99128 15.5866 7.99128 15.5866L7.99121 15.5866Z"></path></svg>Mercor</span></h3>
+<p>A Mercor conecta profissionais de diferentes áreas de especialização a projetos remotos que ajudam a treinar, avaliar e aprimorar modelos avançados de Inteligência Artificial.</p>
+<p>As oportunidades são voltadas a especialistas de áreas como tecnologia, saúde, direito, finanças, negócios, engenharia, ciências, comunicação e outras. Muitos projetos oferecem horários flexíveis e contratação por período determinado.</p>
+<a class="job-link" href="https://t.mercor.com/gmCk6" target="_blank" rel="noopener">Explorar oportunidades <span aria-hidden="true">→</span></a>
+</article>
+<article>
+<h3><svg class="job-logo" viewBox="0 0 89 20" role="img" aria-label="micro1"><path d="M20.6074 18.931H16.0662V11.8165C16.0662 11.4128 15.9485 11.0849 15.713 10.8326C15.4944 10.5803 15.1496 10.4541 14.6786 10.4541C13.9891 10.4541 13.3667 10.7737 12.8117 11.4128V18.931H8.2705V11.8165C8.2705 10.9083 7.80797 10.4541 6.88291 10.4541C6.21014 10.4541 5.59624 10.7737 5.0412 11.4128V18.931H0.5V6.74548H5.0412V8.13307C5.36077 7.72941 5.89057 7.35098 6.63062 6.99777C7.37067 6.62775 8.1864 6.44274 9.07783 6.44274C10.8943 6.44274 12.0632 7.15756 12.5846 8.58719C12.9715 7.99852 13.5433 7.49394 14.3002 7.07346C15.0739 6.65298 15.9233 6.44274 16.8483 6.44274C18.0089 6.44274 18.9255 6.74548 19.5983 7.35098C20.271 7.95647 20.6074 8.87312 20.6074 10.1009V18.931Z"></path><path d="M27.9607 5.13083C27.4729 5.61859 26.8758 5.86247 26.1694 5.86247C25.463 5.86247 24.8575 5.61859 24.3529 5.13083C23.8652 4.62626 23.6213 4.02076 23.6213 3.31435C23.6213 2.60795 23.8652 2.01086 24.3529 1.5231C24.8575 1.01852 25.463 0.766235 26.1694 0.766235C26.8758 0.766235 27.4729 1.01852 27.9607 1.5231C28.4652 2.01086 28.7175 2.60795 28.7175 3.31435C28.7175 4.02076 28.4652 4.62626 27.9607 5.13083ZM28.44 18.931H23.8988V6.74548H28.44V18.931Z"></path><path d="M37.7312 19.2338C35.7633 19.2338 34.1318 18.6451 32.8367 17.4678C31.5417 16.2904 30.8941 14.743 30.8941 12.8256C30.8941 10.9251 31.5417 9.38611 32.8367 8.20876C34.1318 7.03141 35.7633 6.44274 37.7312 6.44274C38.9926 6.44274 40.069 6.67821 40.9604 7.14915C41.8519 7.60327 42.4994 8.13307 42.9031 8.73857L39.9765 11.4885C39.5224 10.7989 38.8412 10.4541 37.933 10.4541C37.2602 10.4541 36.6884 10.6644 36.2174 11.0849C35.7633 11.4885 35.5362 12.0688 35.5362 12.8256C35.5362 13.5825 35.7633 14.1712 36.2174 14.5917C36.6884 15.0122 37.2602 15.2224 37.933 15.2224C38.8076 15.2224 39.4888 14.8692 39.9765 14.1628L42.9031 16.938C42.4994 17.5435 41.8519 18.0817 40.9604 18.5526C40.069 19.0067 38.9926 19.2338 37.7312 19.2338Z"></path><path d="M49.6885 18.931H45.1473V6.74548H49.6885V8.08262C50.0753 7.6285 50.6219 7.23324 51.3283 6.89686C52.0516 6.56047 52.7496 6.39228 53.4223 6.39228V10.7317C53.1701 10.6476 52.8253 10.6055 52.388 10.6055C51.0592 10.6055 50.1594 10.8914 49.6885 11.4633V18.931Z"></path><path d="M66.7343 17.3669C65.4897 18.6115 63.8246 19.2338 61.739 19.2338C59.6534 19.2338 57.9883 18.6115 56.7437 17.3669C55.5159 16.1222 54.902 14.6085 54.902 12.8256C54.902 11.0428 55.5159 9.53748 56.7437 8.30968C57.9883 7.06505 59.6534 6.44274 61.739 6.44274C63.8246 6.44274 65.4897 7.06505 66.7343 8.30968C67.979 9.53748 68.6013 11.0428 68.6013 12.8256C68.6013 14.6085 67.979 16.1222 66.7343 17.3669ZM61.739 15.2224C62.4286 15.2224 62.9668 15.0037 63.3537 14.5664C63.7405 14.1123 63.9339 13.5321 63.9339 12.8256C63.9339 12.1361 63.7405 11.5726 63.3537 11.1353C62.9668 10.6812 62.4286 10.4541 61.739 10.4541C61.0662 10.4541 60.5364 10.6812 60.1496 11.1353C59.7628 11.5726 59.5693 12.1361 59.5693 12.8256C59.5693 13.5321 59.7628 14.1123 60.1496 14.5664C60.5364 15.0037 61.0662 15.2224 61.739 15.2224Z"></path><path d="M80.614 18.931H75.5177V8.58719L72.6669 11.4128L69.7908 8.41059L76.2241 2.10337H80.614V18.931Z"></path><path d="M88.1927 18.4264C87.6545 18.9646 87.0238 19.2337 86.3006 19.2337C85.5773 19.2337 84.9466 18.9646 84.4084 18.4264C83.8702 17.8882 83.6011 17.2574 83.6011 16.5342C83.6011 15.811 83.8702 15.1803 84.4084 14.642C84.9466 14.1038 85.5773 13.8347 86.3006 13.8347C87.0238 13.8347 87.6545 14.1038 88.1927 14.642C88.7309 15.1803 89.0001 15.811 89.0001 16.5342C89.0001 17.2574 88.7309 17.8882 88.1927 18.4264Z"></path></svg></h3>
+<p>A micro1 conecta talentos globais a oportunidades remotas voltadas ao desenvolvimento, treinamento e avaliação de sistemas de Inteligência Artificial.</p>
+<p>A plataforma oferece projetos flexíveis e posições em diferentes áreas profissionais. O processo seletivo pode incluir uma entrevista conduzida pela Zara, recrutadora de IA da micro1, além de avaliações específicas relacionadas às competências exigidas pela vaga.</p>
+<a class="job-link" href="https://refer.micro1.ai/referral/jobs?referralCode=3742fcb0-416d-4756-897e-78feda94925d&amp;utm_source=referral&amp;utm_medium=share&amp;utm_campaign=job_referral" target="_blank" rel="noopener">Explorar oportunidades <span aria-hidden="true">→</span></a>
+</article>
+<article>
+<h3><span class="job-ethos" lang="en">ethos</span></h3>
+<p>A Ethos conecta profissionais experientes a oportunidades de consultoria remunerada, aconselhamento, pesquisa, projetos de inteligência artificial e outras oportunidades profissionais.</p>
+<p>Se você tem experiência e conhecimento especializado, conheça as possibilidades disponíveis na plataforma.</p>
+<a class="job-link" href="https://agent.askethos.com/refer/ks5u26ton1y2" target="_blank" rel="noopener">Explorar oportunidades <span aria-hidden="true">→</span></a>
+</article>
+<article>
+<h3><svg class="job-logo" viewBox="0 0 1031 300" role="img" aria-label="Strider"><path d="M1031 156.565H985.628V202.137H1031V156.565Z"></path><path d="M910.407 78.7555H952.993V118.726H953.789C955.116 113.13 957.636 107.668 961.351 102.338C965.331 97.0088 969.974 92.2123 975.281 87.9487C980.853 83.4187 986.955 79.8214 993.588 77.1566C1000.22 74.4919 1006.99 73.1596 1013.89 73.1596C1019.19 73.1596 1022.77 73.2928 1024.63 73.5593C1026.75 73.8257 1028.88 74.0922 1031 74.3587V118.326C1027.82 117.794 1024.5 117.394 1021.05 117.127C1017.87 116.594 1014.68 116.328 1011.5 116.328C1003.8 116.328 996.507 117.927 989.608 121.124C982.975 124.056 977.138 128.586 972.097 134.714C967.055 140.577 963.075 147.905 960.157 156.698C957.238 165.492 955.779 175.618 955.779 187.076V285.404H910.407V78.7555Z"></path><path d="M846.984 143.106C849.637 149.768 851.229 156.696 851.759 163.891H745.863C745.53 167.661 745.229 172.736 745.229 178.762C745.229 185.205 745.535 190.294 745.855 193.869H897.131C898.988 178.414 897.927 163.491 893.947 149.102C890.232 134.446 884.13 121.522 875.639 110.33C867.149 99.1384 856.403 90.2116 843.402 83.5499C830.666 76.6216 816.205 73.1575 800.02 73.1575C784.631 73.1575 770.834 76.0887 758.628 81.951C746.423 87.8134 735.943 95.8075 727.187 105.933C718.696 115.793 712.063 127.384 707.287 140.708C705.504 145.869 704.074 151.154 702.996 156.565H746.5C747.212 151.568 748.475 146.815 750.271 142.307C753.189 135.645 756.904 129.916 761.415 125.119C766.19 120.056 771.762 116.193 778.13 113.528C784.764 110.597 792.06 109.131 800.02 109.131C807.715 109.131 814.613 110.73 820.716 113.928C827.084 116.859 832.39 120.856 836.636 125.919C841.146 130.715 844.596 136.444 846.984 143.106Z"></path><path d="M701.693 202.121C702.733 210.597 704.465 218.638 706.889 226.245C711.4 239.569 717.9 251.027 726.391 260.62C735.147 270.213 745.76 277.674 758.231 283.004C770.701 288.333 785.029 290.998 801.214 290.998C812.358 290.998 822.971 289.399 833.054 286.201C843.402 283.27 852.688 278.874 860.913 273.011C869.139 266.882 876.17 259.421 882.007 250.628C887.844 241.834 891.957 231.841 894.345 220.649H851.361C847.382 232.108 841.279 240.768 833.054 246.63C825.094 252.226 814.481 255.024 801.214 255.024C791.662 255.024 783.437 253.425 776.538 250.228C769.64 246.764 763.935 242.234 759.425 236.638C754.914 231.042 751.465 224.513 749.077 217.052C747.691 212.183 746.744 207.217 746.251 202.121H701.693Z"></path><path d="M645.951 285.404H688.935V199.866H643.555C643.026 202.812 642.365 205.744 641.573 208.66C639.451 217.187 636.001 224.915 631.226 231.843C626.715 238.772 620.745 244.367 613.316 248.631C606.152 252.895 597.529 255.026 587.446 255.026C577.629 255.026 569.138 253.028 561.974 249.031C554.81 245.034 548.84 239.704 544.065 233.042C539.554 226.381 536.105 218.786 533.717 210.259C531.594 201.732 530.533 193.072 530.533 184.278C530.533 174.952 531.461 165.892 533.319 157.098C535.441 148.038 538.758 140.044 543.268 133.116C548.044 125.921 554.014 120.192 561.178 115.928C568.607 111.398 577.629 109.133 588.242 109.133C605.754 109.133 619.551 115.528 629.634 128.319C635.797 135.938 640.125 145.353 642.618 156.565H688.935V0.0130344H643.563V105.536H642.767C639.318 99.9399 634.94 95.1434 629.634 91.1463C624.592 86.8828 619.02 83.4186 612.918 80.7539C606.815 78.0892 600.447 76.2239 593.814 75.158C587.181 73.8257 580.68 73.1595 574.312 73.1595C563.168 73.1595 552.157 75.2913 541.279 79.5548C530.665 83.5519 521.113 89.9472 512.623 98.7408C504.398 107.534 497.764 118.726 492.723 132.316C487.682 145.906 485.161 162.028 485.161 180.681C485.161 196.136 487.151 210.659 491.131 224.249C495.111 237.572 501.081 249.164 509.041 259.023C517.001 268.883 526.951 276.744 538.891 282.606C551.096 288.202 565.291 291 581.476 291C594.477 291 606.815 288.469 618.49 283.406C630.164 278.076 639.053 269.416 645.155 257.425H645.951V285.404Z"></path><path d="M473.088 0H427.716V45.5668H473.088V0Z"></path><path d="M427.716 78.7556H473.088V285.404H427.716V78.7556Z"></path><path d="M294.404 78.7555H336.99V118.726H337.786C339.113 113.13 341.633 107.668 345.348 102.338C349.328 97.0088 353.971 92.2123 359.278 87.9487C364.85 83.4187 370.952 79.8214 377.585 77.1566C384.219 74.4919 390.985 73.1596 397.883 73.1596C403.19 73.1596 406.772 73.2928 408.629 73.5593C410.752 73.8257 412.874 74.0922 414.997 74.3587V118.326C411.813 117.794 408.496 117.394 405.047 117.127C401.863 116.594 398.679 116.328 395.495 116.328C387.801 116.328 380.504 117.927 373.605 121.124C366.972 124.056 361.135 128.586 356.094 134.714C351.052 140.577 347.072 147.905 344.154 156.698C341.235 165.492 339.776 175.618 339.776 187.076V285.404H294.404V78.7555Z"></path><path d="M195.21 78.7539H160.982V84.014C166.663 88.5023 171.462 93.9562 175.379 100.376C177.861 104.114 179.908 108.232 181.519 112.729H195.21V234.64C195.475 243.167 196.271 250.761 197.598 257.423C199.19 264.085 201.976 269.681 205.956 274.211C210.201 278.474 215.906 281.805 223.07 284.203C230.499 286.335 240.184 287.401 252.123 287.401C257.165 287.401 262.073 287.135 266.849 286.602C271.625 286.069 276.534 285.536 281.575 285.003V249.829C278.391 250.628 275.207 251.161 272.023 251.427H262.471C257.43 251.427 253.45 250.894 250.531 249.829C247.613 248.496 245.357 246.631 243.765 244.233C242.439 241.834 241.51 238.903 240.979 235.439C240.714 231.975 240.581 227.845 240.581 223.048V112.729H281.575V78.7539H240.581V16.7992H195.21V78.7539Z"></path><path d="M45.3715 219.051C46.6981 232.374 51.7394 241.701 60.4953 247.03C69.2512 252.36 79.7317 255.024 91.9369 255.024C96.1822 255.024 100.958 254.758 106.265 254.225C111.837 253.425 117.011 252.093 121.787 250.228C126.563 248.363 130.41 245.698 133.328 242.234C136.512 238.503 137.972 233.707 137.706 227.844C137.441 221.982 135.318 217.185 131.338 213.455C127.359 209.724 122.185 206.793 115.817 204.661C109.714 202.263 102.683 200.264 94.7229 198.666C86.763 197.067 78.6704 195.335 70.4452 193.469C61.9546 191.604 53.7294 189.339 45.7695 186.674C38.0749 184.01 31.0436 180.412 24.6757 175.882C18.5731 171.352 13.6645 165.623 9.94989 158.695C6.23526 151.5 4.37795 142.707 4.37795 132.314C4.37795 121.122 7.03125 111.796 12.3379 104.335C17.9098 96.607 24.8084 90.4781 33.0336 85.9481C41.5242 81.1516 50.8107 77.8207 60.8933 75.9554C71.2412 74.0901 81.0584 73.1575 90.3449 73.1575C100.958 73.1575 111.041 74.3566 120.593 76.7548C130.41 78.8866 139.166 82.484 146.86 87.5469C154.82 92.6099 161.321 99.2717 166.362 107.532C171.669 115.526 174.985 125.253 176.312 136.711H128.951C126.828 125.786 121.787 118.458 113.827 114.727C106.132 110.996 97.2435 109.131 87.161 109.131C83.977 109.131 80.1297 109.398 75.6191 109.931C71.3738 110.463 67.2612 111.529 63.2813 113.128C59.5666 114.461 56.3827 116.592 53.7294 119.524C51.0761 122.188 49.7494 125.786 49.7494 130.316C49.7494 135.911 51.6067 140.442 55.3214 143.906C59.3013 147.37 64.3426 150.301 70.4452 152.699C76.8131 154.831 83.977 156.696 91.9369 158.295C99.8968 159.894 108.122 161.626 116.613 163.491C124.838 165.357 132.93 167.622 140.89 170.286C148.85 172.951 155.882 176.548 161.984 181.078C168.352 185.608 173.393 191.338 177.108 198.266C181.088 205.194 183.078 213.721 183.078 223.847C183.078 236.105 180.292 246.497 174.72 255.024C169.148 263.551 161.851 270.48 152.83 275.809C144.074 281.139 134.257 285.002 123.379 287.401C112.5 289.799 101.754 290.998 91.1409 290.998C78.1398 290.998 66.0672 289.532 54.9234 286.601C44.0448 283.67 34.4929 279.273 26.2677 273.411C18.3078 267.282 11.9399 259.821 7.16392 251.027C2.6533 241.967 0.26533 231.308 0 219.051H45.3715Z"></path></svg></h3>
+<p>A Strider conecta profissionais da América Latina a empresas internacionais, especialmente dos Estados Unidos, que buscam talentos para trabalhar remotamente.</p>
+<p>A plataforma oferece oportunidades de longo prazo, principalmente nas áreas de tecnologia e desenvolvimento de software. Os candidatos passam por um processo de avaliação que pode considerar experiência profissional, competências técnicas, nível de inglês e compatibilidade com a cultura da empresa.</p>
+<a class="job-link" href="https://app.onstrider.com/r/tatidefacio" target="_blank" rel="noopener">Explorar oportunidades <span aria-hidden="true">→</span></a>
+</article>
+</div>
+</section>
+
+<section class="unigran" id="unigran" aria-labelledby="unigran-title">
+<div class="unigran-copy reveal reveal-left" data-reveal="uniL">
+<img class="unigran-logo" src="assets/unigran-logo.svg" alt="UNIGRAN">
+<span class="eyebrow">Universidade</span>
+<h2 id="unigran-title">Educação que abre portas para o <em>seu futuro.</em></h2>
+<p>A UNIGRAN oferece ensino de qualidade com flexibilidade para você estudar de onde estiver e conquistar seus objetivos profissionais no Brasil e no mundo.</p>
+<a class="text-link" href="unigran.html">Conheça a UNIGRAN <span>→</span></a>
+</div>
+<div class="unigran-visual reveal reveal-right" data-reveal="uniR">
+<div class="unigran-frame">
+<img src="assets/unigran-estudante.webp" alt="Estudante sorridente com fones de ouvido segurando cadernos">
+</div>
+<span class="unigran-badge">100% online</span>
+</div>
+</section>
+
+<section class="partners reveal reveal-up" data-reveal="partners">
+<div class="partners-inner">
+<span class="eyebrow">Nossos parceiros</span>
+<div class="partner-carousel" aria-label="Nossos parceiros">
+<div class="partner-track">
+<div class="partner-set">
+<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt="Logo do parceiro Alumni"></div>
+<div class="partner-logo"><img src="assets/parceiro-terra.png" alt="Logo do parceiro Terra"></div>
+<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt="Logo do parceiro Alumni"></div>
+<div class="partner-logo"><img src="assets/parceiro-terra.png" alt="Logo do parceiro Terra"></div>
+<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt="Logo do parceiro Alumni"></div>
+<div class="partner-logo"><img src="assets/parceiro-terra.png" alt="Logo do parceiro Terra"></div>
+<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt="Logo do parceiro Alumni"></div>
+<div class="partner-logo"><img src="assets/parceiro-terra.png" alt="Logo do parceiro Terra"></div>
+</div>
+<div class="partner-set" aria-hidden="true">
+<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt=""></div>
+<div class="partner-logo"><img src="assets/parceiro-terra.png" alt=""></div>
+<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt=""></div>
+<div class="partner-logo"><img src="assets/parceiro-terra.png" alt=""></div>
+<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt=""></div>
+<div class="partner-logo"><img src="assets/parceiro-terra.png" alt=""></div>
+<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt=""></div>
+<div class="partner-logo"><img src="assets/parceiro-terra.png" alt=""></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="testimonials" lang="pt-BR">
+<div class="narrow reveal reveal-up" data-reveal="testH"><h2>Depoimentos</h2><div class="rule"></div></div>
+<div class="testimonial-slider reveal reveal-up" data-reveal="testS" aria-live="polite">
+<div class="tp" aria-label="Escolher depoimento">
+<button type="button" class="tp-seg active" aria-label="Depoimento 1 de 6" data-i="0"><i class="tp-fill"></i></button>
+<button type="button" class="tp-seg " aria-label="Depoimento 2 de 6" data-i="1"><i class="tp-fill"></i></button>
+<button type="button" class="tp-seg " aria-label="Depoimento 3 de 6" data-i="2"><i class="tp-fill"></i></button>
+<button type="button" class="tp-seg " aria-label="Depoimento 4 de 6" data-i="3"><i class="tp-fill"></i></button>
+<button type="button" class="tp-seg " aria-label="Depoimento 5 de 6" data-i="4"><i class="tp-fill"></i></button>
+<button type="button" class="tp-seg " aria-label="Depoimento 6 de 6" data-i="5"><i class="tp-fill"></i></button>
+</div>
+<article class="testimonial active">
+<img src="assets/depoimento-lilian.jpg" alt="Lilian Melo">
+<h3>Lilian Melo</h3>
+<div class="stars">★★★★★</div>
+<p>“E foi numa reunião do grupo networking para brasileiros que eu conheci a Tati. Nós trocamos mensagens e eu decidi contratar os serviços dela. Em menos de dois meses eu estava empregada na minha área.”</p>
+</article>
+<article class="testimonial ">
+<img src="assets/depoimento-daniela.jpg" alt="Daniela Santos">
+<h3>Daniela Santos</h3>
+<div class="stars">★★★★★</div>
+<p>“Depois da oficina, fiz tudo de acordo com suas orientações e me candidatei para duas vagas. Não só fui chamada para a entrevista como recebi job offer dos dois hospitais.”</p>
+</article>
+<article class="testimonial ">
+<img src="assets/depoimento-poliana.jpg" alt="Poliana Miranda">
+<h3>Poliana Miranda</h3>
+<div class="stars">★★★★★</div>
+<p>“As oficinas foram essenciais para meu entendimento sobre como as coisas funcionam. Você me apresentou pessoas que me apresentaram pessoas, e esse ciclo continua.”</p>
+</article>
+<article class="testimonial ">
+<img src="assets/depoimento-rafael.jpg" alt="Rafael Passos">
+<h3>Rafael Passos</h3>
+<div class="stars">★★★★★</div>
+<div class="quote"><p>“Ser orientado por Tatiane Defacio não foi apenas uma oportunidade, mas uma experiência personalizada que se mostrou inestimável durante uma desafiadora transição de carreira. Sua atenção aos detalhes e atendimento personalizado proporcionaram a confiança que eu precisava em meio ao estresse do mercado de trabalho. Desde refinar meu currículo até garantir a posição que desejava, os resultados foram notáveis. O profissionalismo, a dedicação e a orientação perspicaz de Tatiane foram verdadeiramente transformadores. Eu a recomendo de todo o coração para quem busca um suporte profissional excepcional!”</p></div>
+</article>
+<article class="testimonial ">
+<img src="assets/depoimento-lidia.jpg" alt="Lidia Nobre">
+<h3>Lidia Nobre</h3>
+<div class="stars">★★★★★</div>
+<div class="quote"><p>“Ser mentorada da Tati foi uma experiência que mudou meu modo de ver a mim mesma porque ela tem esse dom de olhar pra gente, pras nossas vivências e experiências de um modo muito especial e eu nunca vou conseguir agradecer o suficiente por isso.</p><p>Com a ajuda dela eu consegui transformar o meu modo de me apresentar ao mercado de trabalho e acredito que isso ainda vai reverberar muito ao longo da minha vida.</p><p>Acredito que qualquer pessoa que for mentorada por ela pelo período que seja vai atingir seus objetivos até aqueles que ainda não sabe que tem, além daqueles que ela te mostra que não são apenas um sonho. Tudo isso com muito pé no chão, claro.”</p></div>
+</article>
+<article class="testimonial ">
+<img src="assets/depoimento-elza.jpg" alt="Elza dos Santos">
+<h3>Elza dos Santos</h3>
+<div class="stars">★★★★★</div>
+<div class="quote"><p>“Acompanho o trabalho da Tati há aproximadamente cinco anos e, nesse período, pude perceber o quanto ela leva a sério o desenvolvimento profissional. Sua dedicação em cada projeto é admirável; além disso, Tati é uma amiga incrível, que transmite sempre uma energia positiva capaz de transformar qualquer jornada.</p><p>Neste ano tive a oportunidade de participar do Career Bootcamp, conduzido por ela, e foi uma experiência transformadora. Durante meses de tarefas, encontros e conversas profundas, Tati orquestrou cada etapa com clareza e objetividade. Cada tema foi abordado com riqueza de detalhes, mostrando que falar de carreira vai muito além de currículos e cartas de apresentação, trata-se de sonhos, objetivos, felicidade, descobertas e talentos.</p><p>O Career Bootcamp é um programa que amplia horizontes e ajuda cada participante a reconhecer e desenvolver suas próprias habilidades. Tati conduz o processo com transparência e sensibilidade, extraindo o melhor de cada um e mostrando o valor único que cada profissional carrega. Participar dessa jornada foi muito mais do que um aprendizado: foi um divisor de águas. Recomendo de olhos fechados a Tati e o Career Bootcamp a todos que desejam descobrir seu verdadeiro potencial e alcançar resultados que antes pareciam inatingíveis.”</p></div>
+</article>
+</div>
+</section>
+
+<section class="contact split-section" id="contact" lang="pt-BR">
+<div class="contact-copy reveal reveal-left" data-reveal="conL">
+<span class="eyebrow">Fale com a gente</span>
+<h2>Contato</h2>
+<p>Tem dúvidas sobre as comunidades, oficinas ou eventos da Believe Brazil? Escreva para a gente pelo e-mail abaixo e siga nossas redes para acompanhar as novidades.</p>
+<a class="contact-action" href="mailto:adm@believebrazil.com"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17.5 6h-16c-.827 0-1.5.673-1.5 1.5v9c0 .827.673 1.5 1.5 1.5h16c.827 0 1.5-.673 1.5-1.5v-9c0-.827-.673-1.5-1.5-1.5zm0 1 .087.008-7.532 5.021c-.29.193-.819.193-1.109 0L1.414 7.008 1.5 7h16zm0 10h-16a.5.5 0 0 1-.5-.5V7.934l7.391 4.927c.311.207.71.311 1.109.311s.798-.104 1.109-.311L18 7.934V16.5a.5.5 0 0 1-.5.5z"></path></svg><span>adm@believebrazil.com</span></a>
+</div>
+<div class="follow reveal reveal-right" data-reveal="conR">
+<h2>Siga-nos</h2>
+<div class="socials">
+<a href="https://www.facebook.com/believebrazilgroup/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l9.2-71.1h-69.8v-45.4c0-20.6 5.7-34.6 35.3-34.6h37.6V88.2c-6.5-.9-28.8-2.800-54.8-2.800-54.3 0-91.5 33.1-91.5 94v52.4H180v71.1h61.3V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"></path></svg></a>
+<a href="https://www.linkedin.com/company/believebrazil/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 24.1 24.1 0 53.8 0s53.8 24.1 53.8 53.8c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"></path></svg></a>
+<a href="https://www.instagram.com/believe.brazil/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a>
+<a href="https://www.youtube.com/c/TatianeDefácioBelieveBrazil" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.788-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.496 6.321-42.003 24.947-48.284 48.597C14.933 166.95 14.933 256.388 14.933 256.388s0 89.438 11.412 132.305c6.281 23.65 24.788 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.496-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zM232.145 337.591V175.185l142.739 81.205-142.739 81.201z"></path></svg></a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="copyright"><span id="year"></span><span>© Believe Brazil - Todos os direitos reservados</span></div>
+<span><a href="https://sitetoaster.unity42.ca/" target="_blank" rel="noopener">SiteToaster</a></span>
+</footer>
+<div class="colour-ribbon footer-ribbon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+</div>
+</body>
+</html>
