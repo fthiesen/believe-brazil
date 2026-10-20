@@ -36,11 +36,11 @@ button,input,textarea{font:inherit}
 
 /* Hero */
 .hero{min-height:640px;padding:0 15px 80px;display:grid;place-items:center;background:transparent}
-.hero-inner{width:min(600px,100%)}
-.hero h1{margin:0 0 30px;font:500 35px/1.2 RCG,sans-serif}
-.hero p{margin:0 0 30px;color:var(--berry);font:400 28px/1.3 ESP,sans-serif}
-.hero-link{transition:color .25s}
-.hero-link:hover,.hero-link:focus-visible{color:var(--orange)}
+.hero-inner{width:min(640px,100%)}
+.hero h1{margin:0 0 30px;font:500 35px/1.2 RCG,sans-serif;text-wrap:balance}
+.hero .hero-text{max-width:594px;margin:0;color:#000;font:400 18px/1.45 Arial,sans-serif;text-wrap:pretty}
+.hero .hero-text+.hero-text{margin-top:14px}
+.hero .hero-link{display:flex;width:max-content;margin:24px 0 30px}
 .scroll-cue{display:block;width:26px;height:26px;animation:bob 1.8s ease-in-out infinite}
 .scroll-cue svg{width:26px;height:26px;fill:var(--berry)}
 .colour-ribbon{height:30px;margin-top:-30px;display:grid;grid-template-columns:17.771% 10.366% 32.892% 24.707% 14.264%}
@@ -180,10 +180,15 @@ form button:hover{background:var(--lilac)}
 .partners-inner{width:100%;margin:auto;padding:0 max(24px,calc((100vw - var(--max))/2))}
 .partner-carousel{width:100%;overflow:hidden}
 .partner-track{display:flex;width:max-content;animation:partnerScroll 30s linear infinite}
-.partner-carousel:hover .partner-track,.partner-carousel:focus-within .partner-track{animation-play-state:paused}
+.partner-carousel:hover .partner-track,.partner-carousel:has(a:focus-visible) .partner-track{animation-play-state:paused}
 .partner-set{display:flex;align-items:center;gap:56px;padding-right:56px}
 .partner-logo{display:grid;place-items:center;flex:0 0 190px;width:190px;height:120px}
 .partner-logo img{max-width:190px;max-height:100px;object-fit:contain}
+.partner-oi img{width:186px}
+.partner-uni img{width:150px}
+.partner-denise img{width:72px}
+.partner-convida img{width:156px}
+.partner-bryan img{width:124px}
 
 /* Depoimentos */
 .avs{display:flex;justify-content:center;align-items:center;gap:24px;margin:0}
@@ -289,6 +294,11 @@ body{background-attachment:scroll;background-position:right top;background-size:
 .partner-set{gap:32px;padding-right:32px}
 .partner-logo{flex-basis:150px;width:150px;height:100px}
 .partner-logo img{max-width:150px;max-height:80px}
+.partner-oi img{width:146px}
+.partner-uni img{width:118px}
+.partner-denise img{width:60px}
+.partner-convida img{width:110px}
+.partner-bryan img{width:96px}
 .text-link{font-size:21px;gap:8px}
 .contact-action{font-size:21px;gap:8px}
 .contact-action svg{width:20px;height:20px;flex:0 0 20px}
@@ -332,7 +342,7 @@ html{scroll-behavior:auto}
 <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
 <nav id="primary-nav" aria-label="Navegação principal">
 <a href="#top">Início</a>
-<a href="sobre.html">Sobre</a>
+<a href="#about">Sobre</a>
 <a href="unigran.html">Educação</a>
 <a href="#contact">Contato</a>
 </nav>
@@ -342,8 +352,10 @@ html{scroll-behavior:auto}
 
 <section class="hero">
 <div class="hero-inner intro-up">
-<h1>Uma ponte entre candidatos estrangeiros e empresas que buscam profissionais comprometidos e dedicados.</h1>
-<p><a class="hero-link" href="#about">Saiba como podemos ajudar você.</a></p>
+<h1>Conectamos brasileiros no Canadá a oportunidades que transformam carreiras, negócios e vidas.</h1>
+<p class="hero-text">A Believe Brazil é um ecossistema que reúne pessoas, empresas, comunidades e parceiros estratégicos para gerar conexões e abrir portas para novas oportunidades.</p>
+<p class="hero-text">Em um só lugar, você encontra recursos para desenvolver sua carreira, expandir seus negócios, acessar oportunidades profissionais, educação, moradia e eventos.</p>
+<a class="text-link hero-link" href="#about">Saiba mais <span>→</span></a>
 <a class="scroll-cue" href="#about" aria-label="Ir para Sobre"><svg viewBox="0 0 20 20" aria-hidden="true"><polygon points="9,0 9,16.2 3.4,10.6 2,12 10,20 18,12 16.6,10.6 11,16.2 11,0"></polygon></svg></a>
 </div>
 </section>
@@ -461,24 +473,28 @@ html{scroll-behavior:auto}
 <div class="partner-carousel" aria-label="Nossos parceiros">
 <div class="partner-track">
 <div class="partner-set">
-<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt="Logo do parceiro Alumni"></div>
-<div class="partner-logo"><img src="assets/parceiro-terra.png" alt="Logo do parceiro Terra"></div>
-<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt="Logo do parceiro Alumni"></div>
-<div class="partner-logo"><img src="assets/parceiro-terra.png" alt="Logo do parceiro Terra"></div>
-<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt="Logo do parceiro Alumni"></div>
-<div class="partner-logo"><img src="assets/parceiro-terra.png" alt="Logo do parceiro Terra"></div>
-<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt="Logo do parceiro Alumni"></div>
-<div class="partner-logo"><img src="assets/parceiro-terra.png" alt="Logo do parceiro Terra"></div>
+<a class="partner-logo partner-uni" href="https://www.unigranusa.com/cursos/ead-graduacao" target="_blank" rel="noopener"><img src="assets/parceiro-unigran.svg" alt="UNIGRAN Américas"></a>
+<a class="partner-logo partner-denise" href="https://denise.remaxenterprises.com/" target="_blank" rel="noopener"><img src="assets/parceiro-denise.png" alt="Denise – RE/MAX Enterprises"></a>
+<a class="partner-logo partner-oi" href="https://oitoronto.com" target="_blank" rel="noopener"><img src="assets/parceiro-oitoronto.svg" alt="OiToronto"></a>
+<a class="partner-logo partner-convida" href="https://convida.ca" target="_blank" rel="noopener"><img src="assets/parceiro-convida.jpg" alt="Convida Brazilian Association"></a>
+<a class="partner-logo partner-bryan" href="https://bryansplace.ca" target="_blank" rel="noopener"><img src="assets/parceiro-bryans-place.jpg" alt="Bryan’s Place"></a>
+<a class="partner-logo partner-uni" href="https://www.unigranusa.com/cursos/ead-graduacao" target="_blank" rel="noopener"><img src="assets/parceiro-unigran.svg" alt="UNIGRAN Américas"></a>
+<a class="partner-logo partner-denise" href="https://denise.remaxenterprises.com/" target="_blank" rel="noopener"><img src="assets/parceiro-denise.png" alt="Denise – RE/MAX Enterprises"></a>
+<a class="partner-logo partner-oi" href="https://oitoronto.com" target="_blank" rel="noopener"><img src="assets/parceiro-oitoronto.svg" alt="OiToronto"></a>
+<a class="partner-logo partner-convida" href="https://convida.ca" target="_blank" rel="noopener"><img src="assets/parceiro-convida.jpg" alt="Convida Brazilian Association"></a>
+<a class="partner-logo partner-bryan" href="https://bryansplace.ca" target="_blank" rel="noopener"><img src="assets/parceiro-bryans-place.jpg" alt="Bryan’s Place"></a>
 </div>
 <div class="partner-set" aria-hidden="true">
-<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt=""></div>
-<div class="partner-logo"><img src="assets/parceiro-terra.png" alt=""></div>
-<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt=""></div>
-<div class="partner-logo"><img src="assets/parceiro-terra.png" alt=""></div>
-<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt=""></div>
-<div class="partner-logo"><img src="assets/parceiro-terra.png" alt=""></div>
-<div class="partner-logo"><img src="assets/parceiro-alumni.png" alt=""></div>
-<div class="partner-logo"><img src="assets/parceiro-terra.png" alt=""></div>
+<a class="partner-logo partner-uni" href="https://www.unigranusa.com/cursos/ead-graduacao" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-unigran.svg" alt=""></a>
+<a class="partner-logo partner-denise" href="https://denise.remaxenterprises.com/" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-denise.png" alt=""></a>
+<a class="partner-logo partner-oi" href="https://oitoronto.com" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-oitoronto.svg" alt=""></a>
+<a class="partner-logo partner-convida" href="https://convida.ca" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-convida.jpg" alt=""></a>
+<a class="partner-logo partner-bryan" href="https://bryansplace.ca" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-bryans-place.jpg" alt=""></a>
+<a class="partner-logo partner-uni" href="https://www.unigranusa.com/cursos/ead-graduacao" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-unigran.svg" alt=""></a>
+<a class="partner-logo partner-denise" href="https://denise.remaxenterprises.com/" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-denise.png" alt=""></a>
+<a class="partner-logo partner-oi" href="https://oitoronto.com" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-oitoronto.svg" alt=""></a>
+<a class="partner-logo partner-convida" href="https://convida.ca" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-convida.jpg" alt=""></a>
+<a class="partner-logo partner-bryan" href="https://bryansplace.ca" target="_blank" rel="noopener" tabindex="-1"><img src="assets/parceiro-bryans-place.jpg" alt=""></a>
 </div>
 </div>
 </div>
