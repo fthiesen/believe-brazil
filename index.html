@@ -35,8 +35,11 @@ button,input,textarea{font:inherit}
 .menu-toggle span:not(.sr-only){display:block;width:26px;height:2px;margin:5px;background:var(--berry)}
 
 /* Hero */
-.hero{min-height:640px;padding:0 15px 80px;display:grid;place-items:center;background:transparent}
-.hero-inner{width:min(640px,100%)}
+.hero{min-height:640px;padding:0 max(24px,calc((100vw - var(--max))/2)) 80px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px;align-items:center;background:transparent}
+.hero-inner{width:100%;max-width:594px;margin-top:-8px}
+.hero-visual{position:relative;top:-10px;order:-1;display:flex;justify-content:flex-start;min-width:0}
+.hero-visual img{display:block;flex:0 0 auto;width:100%;max-width:470px;height:auto;margin:-20px 0;mix-blend-mode:multiply;animation:heroVisual 1s cubic-bezier(.2,.7,.2,1) .5s both}
+@keyframes heroVisual{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
 .hero h1{margin:0 0 30px;font:500 35px/1.05 RCG,sans-serif;text-wrap:balance}
 .hero .hero-text{max-width:594px;margin:0;color:#000;font:400 18px/1.45 Arial,sans-serif;text-wrap:pretty}
 .hero .hero-text+.hero-text{margin-top:14px}
@@ -135,7 +138,7 @@ button,input,textarea{font:inherit}
 
 /* UNIGRAN */
 .unigran{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center;padding:100px max(24px,calc((100vw - var(--max))/2));background:linear-gradient(90deg,var(--paper) 68%,var(--gold) 68%)}
-.unigran-logo{display:block;height:46px;width:133px;margin:0 0 36px;fill:var(--orange)}
+.unigran-logo{display:block;width:180px;height:auto;margin:0 0 36px}
 .unigran .eyebrow{margin-bottom:24px}
 .unigran h2{margin:0 0 24px;font:500 40px/1.05 RCG,sans-serif}
 .unigran h2 em{font-style:normal;color:var(--berry)}
@@ -151,7 +154,7 @@ button,input,textarea{font:inherit}
 .unigran-copy{padding:64px 24px}
 .unigran-visual{padding-top:0;background:var(--gold)}
 .unigran h2{font-size:32px}
-.unigran-logo{height:38px;width:110px;margin-bottom:28px}
+.unigran-logo{width:150px;margin-bottom:28px}
 .unigran-frame{z-index:1;width:300px;height:350px;margin:10px 0 -48px;border-radius:0 0 150px 150px}
 .unigran-frame:before{width:300px;height:300px}
 .unigran-frame img{height:332px}
@@ -280,7 +283,10 @@ body{background-attachment:scroll;background-position:right top;background-size:
 .menu-toggle{display:block;z-index:3}
 .site-header nav{position:absolute;z-index:2;top:82px;right:20px;left:20px;display:none;flex-direction:column;padding:20px;background:#fff;box-shadow:0 12px 35px rgba(0,0,0,.12)}
 .site-header nav.open{display:flex}
-.hero{min-height:600px;padding:45px 24px 90px}
+.hero{min-height:0;grid-template-columns:1fr;gap:24px;padding:45px 24px 72px}
+.hero-inner{margin-top:0}
+.hero-visual{top:0;order:0;justify-content:center}
+.hero-visual img{width:100%;max-width:420px;margin:0}
 .split-section,.about{grid-template-columns:1fr}
 .about,.events,.contact{padding:0;background:none}
 .about{background:#fff}
@@ -327,7 +333,7 @@ footer .copyright{flex-wrap:wrap;justify-content:center}
 html{scroll-behavior:auto}
 .bb-armed .reveal{opacity:1;transform:none;transition:none}
 .bb-armed .reveal-mix>article:nth-child(n){opacity:1!important;transform:none!important;transition:none}
-.intro-down,.intro-up,.scroll-cue,.partner-track{animation:none}
+.intro-down,.intro-up,.scroll-cue,.partner-track,.hero-visual img{animation:none}
 .partner-carousel{overflow-x:auto}
 .partner-set[aria-hidden="true"]{display:none}
 }
@@ -358,6 +364,7 @@ html{scroll-behavior:auto}
 <a class="text-link hero-link" href="#about">Saiba mais <span>→</span></a>
 <a class="scroll-cue" href="#about" aria-label="Ir para Sobre"><svg viewBox="0 0 20 20" aria-hidden="true"><polygon points="9,0 9,16.2 3.4,10.6 2,12 10,20 18,12 16.6,10.6 11,16.2 11,0"></polygon></svg></a>
 </div>
+<div class="hero-visual"><img src="assets/hero-conexoes.webp" alt="Globo com o Canadá e o Brasil conectados, cercado por pessoas e ícones de educação, comunidade, carreira e negócios"></div>
 </section>
 
 <div class="colour-ribbon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
@@ -453,7 +460,7 @@ html{scroll-behavior:auto}
 
 <section class="unigran" id="unigran" aria-labelledby="unigran-title">
 <div class="unigran-copy reveal reveal-left" data-reveal="uniL">
-<img class="unigran-logo" src="assets/unigran-logo.svg" alt="UNIGRAN">
+<img class="unigran-logo" src="assets/parceiro-unigran.svg" alt="UNIGRAN Américas">
 <span class="eyebrow">Universidade</span>
 <h2 id="unigran-title">Educação que abre portas para o <em>seu futuro.</em></h2>
 <p>A UNIGRAN oferece ensino de qualidade com flexibilidade para você estudar de onde estiver e conquistar seus objetivos profissionais no Brasil e no mundo.</p>
