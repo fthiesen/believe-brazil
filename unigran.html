@@ -21,7 +21,7 @@
 *{box-sizing:border-box}
 .bb-root{overflow-x:clip}
 html{scroll-behavior:smooth}
-body{margin:0;color:#000;font:400 18px/1.45 Arial,sans-serif;background-color:#fff;background-image:url("assets/arrow-bg.svg");background-repeat:no-repeat;background-position:right top;background-size:50% auto;background-attachment:fixed}
+body{margin:0;color:#4D5D65;font:400 18px/1.45 Arial,sans-serif;background-color:#fff;background-image:url("assets/arrow-bg.svg");background-repeat:no-repeat;background-position:right top;background-size:50% auto;background-attachment:fixed}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
@@ -29,7 +29,7 @@ button{font:inherit}
 
 /* Header (igual à home) */
 .site-header{position:relative;z-index:5;width:100%;height:140px;margin:auto;padding:0 max(24px,calc((100vw - var(--max))/2));display:flex;align-items:center;justify-content:space-between}
-.brand img{width:160px}
+.brand img{width:240px;height:auto;position:relative;top:-2px}
 .site-header nav{display:flex;gap:10px}
 .site-header nav a{position:relative;padding:13px 15px 8px;font:500 15px/1 RCG,sans-serif;text-transform:uppercase;letter-spacing:.8px;transition:color .25s}
 .site-header nav a:after{content:"";position:absolute;inset:1px;border:2px solid var(--orange);opacity:0;transition:.3s}
@@ -87,16 +87,18 @@ h2{margin:0 0 30px;font:500 36px/1.05 RCG,sans-serif}
 .fact span{display:block;margin-top:-1px;font-size:16px;line-height:1.25}
 
 /* Cursos */
-.courses{padding-top:100px;padding-bottom:100px;background:#4f3480}
+.courses{padding-top:100px;padding-bottom:100px;background:#937BAB}
 .courses-head{text-align:center;margin-bottom:56px;color:#fff}
-.courses-head .eyebrow{margin-bottom:24px;color:#fff}
-.courses-head .eyebrow:after{margin-left:auto;margin-right:auto}
+.courses-head .eyebrow{margin-bottom:24px;color:#ECAA4E}
+.courses-head .eyebrow:after{margin-left:auto;margin-right:auto;background:#DBC1C6}
 .courses-head h2{margin:0}
-.course-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
-.course-list li{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:32px 26px;border-radius:6px;background:#efe9f6}
-.course-list svg{align-self:center;width:44px;height:44px;stroke:#4f3480}
-.course-list h3{align-self:stretch;margin:0;color:#4f3480;text-align:center;font:500 24px/1.1 RCG,sans-serif}
-.course-list p{margin:0;font-size:17px;line-height:1.23}
+.course-groups{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px;align-items:start}
+.course-group{padding:32px 32px 24px;border-radius:6px;background:#f5f2f8}
+.course-group h3{margin:0 0 12px;padding-bottom:14px;border-bottom:2px solid var(--gold);color:#4D5D65;font:500 24px/1.1 RCG,sans-serif}
+.course-group ul{margin:0;padding:0;list-style:none}
+.course-group li{padding:9px 0;border-bottom:1px solid rgba(147,123,171,.3);font-size:17px;line-height:1.3;break-inside:avoid}
+.course-group-tec ul{columns:2;column-gap:40px}
+.course-new{display:inline-block;margin-left:6px;padding:2px 7px;border-radius:3px;background:var(--berry);color:#fff;font-size:11px;font-weight:700;line-height:1.3;text-transform:uppercase;letter-spacing:.8px;vertical-align:2px}
 
 /* Chamada Polo Canadá */
 .polo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:center;padding-top:88px;padding-bottom:88px;background:linear-gradient(90deg,var(--paper) 70%,var(--gold) 70%)}
@@ -115,7 +117,7 @@ h2{margin:0 0 30px;font:500 36px/1.05 RCG,sans-serif}
 .cta h2{margin-bottom:8px}
 
 /* Rodapé */
-footer{display:flex;justify-content:space-between;padding:20px 30px;color:#000;background:transparent;font-size:14px}
+footer{display:flex;justify-content:space-between;padding:20px 30px;color:#4D5D65;background:transparent;font-size:14px}
 footer .copyright{display:flex;gap:5px}
 footer a{text-decoration:underline}
 
@@ -130,11 +132,9 @@ footer a{text-decoration:underline}
 .bb-armed .facts.reveal-mix>:nth-child(2){transform:translateX(160px)}
 .bb-armed .facts.reveal-mix>:nth-child(3){transform:translate(-60px,140px)}
 .bb-armed .facts.reveal-mix>:nth-child(4){transform:translate(60px,140px)}
-.bb-armed .course-list.reveal-mix>:nth-child(1){transform:translateX(-160px)}
-.bb-armed .course-list.reveal-mix>:nth-child(2){transform:translateY(140px)}
-.bb-armed .course-list.reveal-mix>:nth-child(3){transform:translateY(140px)}
-.bb-armed .course-list.reveal-mix>:nth-child(4){transform:translateX(160px)}
-.bb-armed .facts.reveal-mix.visible>:nth-child(n),.bb-armed .course-list.reveal-mix.visible>:nth-child(n){opacity:1;transform:none}
+.bb-armed .course-groups.reveal-mix>:nth-child(1){transform:translateX(-160px)}
+.bb-armed .course-groups.reveal-mix>:nth-child(2){transform:translateX(160px)}
+.bb-armed .facts.reveal-mix.visible>:nth-child(n),.bb-armed .course-groups.reveal-mix.visible>:nth-child(n){opacity:1;transform:none}
 .bb-armed .reveal-mix.visible>:nth-child(2){transition-delay:.15s}
 .bb-armed .reveal-mix.visible>:nth-child(3){transition-delay:.3s}
 .bb-armed .reveal-mix.visible>:nth-child(4){transition-delay:.45s}
@@ -161,7 +161,7 @@ footer a{text-decoration:underline}
 
 /* Tablet / mobile */
 @media(max-width:1100px){
-.course-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.course-groups{grid-template-columns:1fr}
 }
 @media(max-width:850px){
 body{font-size:20px}
@@ -197,7 +197,9 @@ footer{flex-direction:column;align-items:center;gap:2px;text-align:center;line-h
 footer .copyright{flex-wrap:wrap;justify-content:center}
 }
 @media(max-width:560px){
-.facts,.course-list{grid-template-columns:1fr}
+.facts{grid-template-columns:1fr}
+.course-group{padding:28px 22px 20px}
+.course-group-tec ul{columns:1}
 }
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
@@ -212,7 +214,7 @@ html{scroll-behavior:auto}
 <div class="bb-root">
 
 <header class="site-header intro-down">
-<a href="index.html" class="brand" aria-label="Believe Brazil — página inicial"><img src="assets/believe-brazil-logo.svg" alt="Believe Brazil"></a>
+<a href="index.html" class="brand" aria-label="Believe Brazil — página inicial"><img src="assets/believe-brazil-logo.png" alt="Believe Brazil"></a>
 <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
 <nav id="primary-nav" aria-label="Navegação principal">
 <a href="index.html">Início</a>
@@ -264,14 +266,52 @@ html{scroll-behavior:auto}
 <section class="courses wrap" aria-labelledby="courses-title">
 <div class="courses-head reveal reveal-up" data-reveal="cH">
 <span class="eyebrow">Cursos</span>
-<h2 id="courses-title">Cursos para todos os momentos da sua vida</h2>
+<h2 id="courses-title">Cursos de graduação EAD</h2>
 </div>
-<ul class="course-list reveal reveal-mix" data-reveal="cL">
-<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="10" width="32" height="22" rx="2"></rect><path d="M4 38h40M18 38l2-6h8l2 6"></path></svg><h3>Graduação EAD</h3><p>Flexibilidade para estudar de onde estiver, com a qualidade UNIGRAN.</p></li>
-<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="15" r="6"></circle><circle cx="33" cy="15" r="6"></circle><path d="M4 40v-3a12 12 0 0 1 24 0v3M24 30a12 12 0 0 1 20 7v3"></path></svg><h3>Graduação Presencial</h3><p>Cursos presenciais em Campo Grande e Dourados, no Mato Grosso do Sul.</p></li>
-<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 12c-5-4-12-4-18-2v28c6-2 13-2 18 2 5-4 12-4 18-2V10c-6-2-13-2-18 2z"></path><path d="M24 12v28"></path></svg><h3>Pós-graduação</h3><p>Mais de 40 cursos para você se especializar e alcançar o próximo nível.</p></li>
-<li><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="36" height="26" rx="2"></rect><path d="M13 17h16M13 24h10"></path><circle cx="33" cy="30" r="6"></circle><path d="M30 35l-2 8 5-3 5 3-2-8"></path></svg><h3>Cursos Livres</h3><p>Aprendizado contínuo para desenvolver novas habilidades.</p></li>
+<div class="course-groups reveal reveal-mix" data-reveal="cL">
+<div class="course-group">
+<h3>Bacharelado</h3>
+<ul>
+<li>Administração</li>
+<li>Ciências Contábeis</li>
+<li>Ciências Econômicas</li>
+<li>Engenharia de Software</li>
+<li>Geografia <span class="course-new">Novo</span></li>
+<li>História <span class="course-new">Novo</span></li>
+<li>Letras/Inglês <span class="course-new">Novo</span></li>
+<li>Teologia</li>
 </ul>
+</div>
+<div class="course-group course-group-tec">
+<h3>Tecnologia</h3>
+<ul>
+<li>Agronegócios</li>
+<li>Análise e Desenvolvimento de Sistemas</li>
+<li>Comércio Exterior</li>
+<li>Design de Interiores</li>
+<li>Gastronomia</li>
+<li>Gestão Comercial</li>
+<li>Gestão da Inteligência Artificial</li>
+<li>Gestão da Qualidade</li>
+<li>Gestão de Cooperativas</li>
+<li>Gestão de Recursos Humanos</li>
+<li>Gestão de Serviços Judiciais e Notariais</li>
+<li>Gestão Financeira</li>
+<li>Gestão Pública</li>
+<li>Inteligência Artificial</li>
+<li>Logística</li>
+<li>Marketing</li>
+<li>Mídias Sociais Digitais</li>
+<li>Negócios Imobiliários</li>
+<li>Processos Gerenciais</li>
+<li>Produção Publicitária</li>
+<li>Tecnologia em Gestão da Produção Industrial <span class="course-new">Novo</span></li>
+<li>Tecnologia em Gestão de Segurança Privada <span class="course-new">Novo</span></li>
+<li>Tecnologia em Segurança Cibernética <span class="course-new">Novo</span></li>
+<li>Tecnologia em Segurança do Trabalho <span class="course-new">Novo</span></li>
+</ul>
+</div>
+</div>
 </section>
 
 <section class="polo wrap" aria-labelledby="polo-title">

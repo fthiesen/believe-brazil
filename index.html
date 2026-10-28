@@ -24,7 +24,7 @@
 *{box-sizing:border-box}
 .bb-root{overflow-x:clip}
 html{scroll-behavior:smooth}
-body{margin:0;color:#000;font:400 18px/1.45 Arial,sans-serif;background-color:#fff;background-image:url("assets/arrow-bg.svg");background-repeat:no-repeat;background-position:right top;background-size:50% auto;background-attachment:fixed}
+body{margin:0;color:#4D5D65;font:400 18px/1.45 Arial,sans-serif;background-color:#fff;background-image:url("assets/arrow-bg.svg");background-repeat:no-repeat;background-position:right top;background-size:50% auto;background-attachment:fixed}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button,input,textarea{font:inherit}
@@ -32,7 +32,7 @@ button,input,textarea{font:inherit}
 
 /* Header */
 .site-header{position:relative;z-index:5;width:100%;height:140px;margin:auto;padding:0 max(24px,calc((100vw - var(--max))/2));display:flex;align-items:center;justify-content:space-between;background:transparent}
-.brand img{width:160px}
+.brand img{width:240px;height:auto;position:relative;top:-2px}
 .site-header nav{display:flex;gap:10px}
 /* Fonte anterior do menu (para reverter): font:600 15px/1 Dosis,sans-serif; */
 .site-header nav a{position:relative;padding:13px 15px 8px;font:500 15px/1 RCG,sans-serif;text-transform:uppercase;letter-spacing:.8px;transition:color .25s}
@@ -49,7 +49,7 @@ button,input,textarea{font:inherit}
 .hero-visual img{display:block;flex:0 0 auto;width:100%;max-width:470px;height:auto;margin:-20px 0;mix-blend-mode:multiply;animation:heroVisual 1s cubic-bezier(.2,.7,.2,1) .5s both}
 @keyframes heroVisual{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
 .hero h1{margin:0 0 30px;font:500 35px/1.05 RCG,sans-serif;text-wrap:balance}
-.hero .hero-text{max-width:594px;margin:0;color:#000;font:400 18px/1.45 Arial,sans-serif;text-wrap:pretty}
+.hero .hero-text{max-width:594px;margin:0;color:#4D5D65;font:400 18px/1.45 Arial,sans-serif;text-wrap:pretty}
 .hero .hero-text+.hero-text{margin-top:14px}
 .hero .hero-link{display:flex;width:max-content;margin:24px 0 30px}
 .scroll-cue{display:block;width:26px;height:26px;animation:bob 1.8s ease-in-out infinite}
@@ -94,7 +94,7 @@ button,input,textarea{font:inherit}
 .communities .service-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;width:min(100%,var(--wide));margin:0 auto;padding:0 40px 96px;background:#fff;color:#fff}
 .communities .service-list article{display:flex;flex-direction:column;gap:28px;min-width:0;overflow-wrap:break-word;hyphens:auto;margin:0;padding:44px 40px 40px;background:var(--berry)}
 .service-icon,.service-icon svg{width:56px;height:56px}
-.communities .service-icon{color:#fff}
+.communities .service-icon{color:var(--gold)}
 .communities .service-icon svg{fill:none}
 .communities .service-list article>div{display:flex;flex-direction:column;flex:1;align-items:flex-start;min-width:0}
 .communities .service-list h3{margin:0 0 20px;font:500 26px/1.1 RCG,sans-serif;color:#fff}
@@ -110,20 +110,20 @@ body{font-size:20px}
 .communities .community-link:focus-visible{outline:2px solid #fff;outline-offset:6px}
 
 /* Vagas */
-.jobs{--wide:1320px;--violet:#4f3480;background:var(--violet)}
+.jobs{--wide:1320px;--violet:#937BAB;background:var(--violet)}
 .jobs>.section-copy{width:min(100%,var(--wide));max-width:none;margin:0 auto;padding:88px 40px 48px;text-align:center}
-.jobs .eyebrow{margin-bottom:24px;color:#fff}
-.jobs .eyebrow:after{margin-left:auto;margin-right:auto;background:var(--orange)}
+.jobs .eyebrow{margin-bottom:24px;color:#ECAA4E}
+.jobs .eyebrow:after{margin-left:auto;margin-right:auto;background:#DBC1C6}
 .jobs .section-copy h2{margin:0;color:#fff}
 .job-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;width:min(100%,var(--wide));margin:0 auto;padding:0 40px 96px}
-.job-list article{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:44px 40px 40px;background:#efe9f6;color:#1d1428;overflow-wrap:break-word}
+.job-list article{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:44px 40px 40px;background:#f5f2f8;color:#4D5D65;overflow-wrap:break-word}
 .job-list h3{margin:0 0 26px;color:var(--violet);font:500 26px/1.1 RCG,sans-serif}
 .job-logo{display:block;height:34px;width:auto;fill:currentColor}
 .job-mercor{display:flex;align-items:center;gap:12px;font:500 32px/34px RCG,sans-serif}
 .job-mercor .job-logo{height:32px}
 .job-ethos{display:block;font:500 36px/34px "Zalando Sans Expanded",sans-serif;letter-spacing:-.025em}
 .job-list p{margin:0 0 16px;font-size:16px;line-height:1.23}
-.job-link{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding:10px 0 7px;color:var(--lilac);border-bottom:2px solid currentColor;font:400 21px/1.2 ESP,sans-serif;transition:.25s}
+.job-link{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding:10px 0 7px;color:#BC345B;border-bottom:2px solid currentColor;font:400 21px/1.2 ESP,sans-serif;transition:.25s}
 .job-link:hover{color:var(--orange)}
 .job-link:focus-visible{outline:2px solid var(--violet);outline-offset:6px}
 @media(max-width:1000px){
@@ -184,7 +184,7 @@ body{font-size:20px}
 .newsletter{padding:90px 24px 80px;color:#fff;text-align:center;background:var(--orange)}
 .newsletter p{margin:0;font:400 26px/1.5 ESP,sans-serif}
 .inline-form{display:grid;grid-template-columns:1fr 1fr auto;gap:20px;margin-top:35px}
-.inline-form input{width:100%;padding:14px;color:#000;border:1px solid rgba(0,0,0,.2);border-radius:0;background:#fff}
+.inline-form input{width:100%;padding:14px;color:#4D5D65;border:1px solid rgba(0,0,0,.2);border-radius:0;background:#fff}
 form button{padding:13px 28px;color:#fff;border:0;background:var(--berry);cursor:pointer;transition:.25s}
 form button:hover{background:var(--lilac)}
 
@@ -216,7 +216,7 @@ form button:hover{background:var(--lilac)}
 .testimonial-slider{width:min(92%,900px);margin:auto}
 .testimonial{display:none;padding:32px 70px 0}
 .testimonial.active{display:block;text-align:center;animation:fadeSlide .55s ease}
-.testimonial h3{margin:0;color:#000;font:500 30px/1.1 RCG,sans-serif}
+.testimonial h3{margin:0;color:#4D5D65;font:500 30px/1.1 RCG,sans-serif}
 .stars{margin:4px 0 0;color:#d9a000;font-size:24px;line-height:1;letter-spacing:3px}
 .testimonial p{margin:18px 0 0;text-align:left;font:italic 20px/1.4 ESP,sans-serif}
 .testimonial .quote{margin-top:18px;text-align:left}
@@ -239,7 +239,7 @@ form button:hover{background:var(--lilac)}
 .socials svg{width:20px;height:20px;fill:currentColor}
 
 /* Footer */
-footer{display:flex;justify-content:space-between;padding:0 30px 20px;color:#000;background:#fff;font-size:14px}
+footer{display:flex;justify-content:space-between;padding:0 30px 20px;color:#4D5D65;background:#fff;font-size:14px}
 footer .copyright{display:flex;gap:5px}
 footer a{text-decoration:underline}
 .footer-ribbon{margin-top:0}
@@ -357,7 +357,7 @@ html{scroll-behavior:auto}
 <div class="bb-root">
 
 <header class="site-header intro-down">
-<a href="#top" class="brand" aria-label="Believe Brazil — página inicial"><img src="assets/believe-brazil-logo.svg" alt="Believe Brazil"></a>
+<a href="#top" class="brand" aria-label="Believe Brazil — página inicial"><img src="assets/believe-brazil-logo.png" alt="Believe Brazil"></a>
 <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
 <nav id="primary-nav" aria-label="Navegação principal">
 <a href="#top">Início</a>
@@ -377,7 +377,7 @@ html{scroll-behavior:auto}
 <a class="text-link hero-link" href="#about">Saiba mais <span>→</span></a>
 <a class="scroll-cue" href="#about" aria-label="Ir para Sobre"><svg viewBox="0 0 20 20" aria-hidden="true"><polygon points="9,0 9,16.2 3.4,10.6 2,12 10,20 18,12 16.6,10.6 11,16.2 11,0"></polygon></svg></a>
 </div>
-<div class="hero-visual"><img src="assets/hero-conexoes.webp" alt="Globo com o Canadá e o Brasil conectados, cercado por pessoas e ícones de educação, comunidade, carreira e negócios"></div>
+<div class="hero-visual"><img src="assets/hero-conexoes.webp?v=2" alt="Globo com o Canadá e o Brasil conectados, cercado por pessoas e ícones de educação, comunidade, carreira e negócios"></div>
 </section>
 
 <div class="colour-ribbon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
@@ -569,7 +569,7 @@ html{scroll-behavior:auto}
 <div class="contact-copy reveal reveal-left" data-reveal="conL">
 <span class="eyebrow">Fale com a gente</span>
 <h2>Contato</h2>
-<p>Tem dúvidas sobre as comunidades, oficinas ou eventos da Believe Brazil? Escreva para a gente pelo e-mail abaixo e siga nossas redes para acompanhar as novidades.</p>
+<p>Tem dúvidas sobre como a Believe Brazil pode te ajudar? Escreva para a gente pelo e-mail abaixo e siga nossas redes para acompanhar as novidades.</p>
 <a class="contact-action" href="mailto:adm@believebrazil.com"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17.5 6h-16c-.827 0-1.5.673-1.5 1.5v9c0 .827.673 1.5 1.5 1.5h16c.827 0 1.5-.673 1.5-1.5v-9c0-.827-.673-1.5-1.5-1.5zm0 1 .087.008-7.532 5.021c-.29.193-.819.193-1.109 0L1.414 7.008 1.5 7h16zm0 10h-16a.5.5 0 0 1-.5-.5V7.934l7.391 4.927c.311.207.71.311 1.109.311s.798-.104 1.109-.311L18 7.934V16.5a.5.5 0 0 1-.5.5z"></path></svg><span>adm@believebrazil.com</span></a>
 </div>
 <div class="follow reveal reveal-right" data-reveal="conR">
