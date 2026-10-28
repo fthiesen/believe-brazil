@@ -43,10 +43,10 @@ button,input,textarea{font:inherit}
 .menu-toggle span:not(.sr-only){display:block;width:26px;height:2px;margin:5px;background:var(--berry)}
 
 /* Hero */
-.hero{min-height:640px;padding:0 max(24px,calc((100vw - var(--max))/2)) 80px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px;align-items:center;background:transparent}
+.hero{min-height:640px;padding:0 max(24px,calc((100vw - var(--max))/2)) 80px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;background:transparent}
 .hero-inner{width:100%;max-width:594px;margin-top:-8px}
 .hero-visual{position:relative;top:-10px;order:-1;display:flex;justify-content:flex-start;min-width:0}
-.hero-visual img{display:block;flex:0 0 auto;width:100%;max-width:470px;height:auto;margin:-20px 0;mix-blend-mode:multiply;animation:heroVisual 1s cubic-bezier(.2,.7,.2,1) .5s both}
+.hero-visual img{display:block;flex:0 0 auto;width:calc(100% + 40px);max-width:620px;height:auto;margin:-20px 0 -20px -40px;mix-blend-mode:multiply;animation:heroVisual 1s cubic-bezier(.2,.7,.2,1) .5s both}
 @keyframes heroVisual{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
 .hero h1{margin:0 0 30px;font:500 35px/1.05 RCG,sans-serif;text-wrap:balance}
 .hero .hero-text{max-width:594px;margin:0;color:#4D5D65;font:400 18px/1.45 Arial,sans-serif;text-wrap:pretty}
@@ -299,7 +299,7 @@ body{background-attachment:scroll;background-position:right top;background-size:
 .hero h1{order:1;margin-bottom:20px}
 .hero-visual{top:0;order:2;justify-content:center;margin:10px 0 20px}
 .hero-inner>:not(h1){order:3}
-.hero-visual img{width:100%;max-width:420px;margin:0}
+.hero-visual img{width:100%;max-width:520px;margin:0}
 .split-section,.about{grid-template-columns:1fr}
 .about,.events,.contact{padding:0;background:none}
 .about{background:#fff}
@@ -331,6 +331,9 @@ body{background-attachment:scroll;background-position:right top;background-size:
 .contact .follow{padding-top:36px}
 footer{flex-direction:column;align-items:center;gap:2px;text-align:center;line-height:1.3}
 footer .copyright{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:600px){
+.hero-visual img{width:calc(100% + 48px);max-width:none;margin:0 -24px}
 }
 @media(max-width:480px){
 .communities>.section-copy{padding:56px 16px 28px}
